@@ -1,10 +1,10 @@
 import React from 'react'
-import Main1 from "./Header"
+import Main from './accsest/front/Main'
 
 export default function App() {
   return (
    <div>
-    
+      <Main/>
    </div>
   )
 }
