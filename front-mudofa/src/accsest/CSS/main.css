@@ -349,10 +349,12 @@ gap: 5px;
     display: flex;
     justify-content: space-between;
 }
+
 .main-info-yangiliklar{
     width: 65%;
     margin-bottom: 40px;
 }
+
 .main-info-kop-oqilganlar{
     width: 30%;
     margin-bottom: 40px;
@@ -417,7 +419,7 @@ transition: 0.5s;
 
 .main-info-btn-2:hover,
 .main-info-btn:hover{
-    scale: 1.1;
+    scale: 1;
     background: #2c57b4;
 }
 .main-info-btn-2 button:hover,
@@ -536,4 +538,33 @@ font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
 }
 .grid-card-text-info-2 h2:hover{
     color:#003096;
+}
+.pagination-btn button{
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: #003096;
+    color: white;
+cursor: pointer;
+font-size: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.pagination-btn{
+    display: flex;
+    gap: 10px;
+}
+.youtube-iframe{
+    width: 100%;
+    height: 500px;
+}
+.youtube-iframe iframe{
+    width: 100%;
+    height: 100%;
+}
+.siniy-block{
+    width: 100%;
+    height: 60px;
+    background: #003096;
 }

@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import '../CSS/main.css'
+import data from './data'
 
 export default function Main() {
+// const slice = data.slice(0, 6);
+
+// console.log(slice);
+
   const videoId = "xCxWId-0Qtw";
   let player;
 
@@ -153,23 +158,26 @@ function closeModal(){
             </div>
             <div className="grid-card">
 
-
-              <div className="grid-card-1" >
-                <div className="grid-card-img">
-                  <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-17_11-04-15.jpg" alt="" />
-                </div>
-                <div className="grid-card-text">
-                  <div className="yangiliklar">
-                    <span>YANGILIKLAR</span>
+              {data.map((item,index)=>{
+                return(
+                  <div className="grid-card-1" >
+                  <div className="grid-card-img">
+                    <img src={item.img} alt="logo" />
                   </div>
-                  <div className="grid-card-text-info">
-                  <h2>Muqaddasdir Vatan bayrogʻi</h2>
-                  <p>17.11.2023</p>
+                  <div className="grid-card-text">
+                    <div className="yangiliklar">
+                      <span>YANGILIKLAR</span>
+                    </div>
+                    <div className="grid-card-text-info">
+                    <h2>{item.nome}</h2>
+                    <p>{item.sanasi}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+                )
+              })}
 
-
+{/* 
               <div className="grid-card-1" >
                 <div className="grid-card-img">
                   <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-17_10-03-10.jpg" alt="" />
@@ -248,6 +256,11 @@ function closeModal(){
                   </div>
                 </div>
               </div>
+               */}
+            </div>
+            <div className="pagination-btn">
+            <button ><i class='bx bx-chevron-left' ></i></button>
+              <button ><i class='bx bx-chevron-right' ></i></button>
             </div>
           </div>
 
@@ -304,7 +317,36 @@ function closeModal(){
                   <p>17.11.2023</p>
                   </div>
             </div>
+            <div className="pagination-btn">
+            <button ><i class='bx bx-chevron-left' ></i></button>
+              <button ><i class='bx bx-chevron-right' ></i></button>
+            </div>
           </div>
+          
+        </div>
+        <div className="main-block-2-ich">
+          <div className="main-info-yangiliklar">
+            <div className="main-info-btn">
+              <button>MULTIMEDIA</button>
+            </div>
+            <div className="youtube-iframe">
+            <iframe  src="https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div className="youtube-iframe-map">
+              <div className="siniy-block">
+                
+              </div>
+            </div>
+          </div>
+
+
+
+          <div className="main-info-kop-oqilganlar">
+            <div className="main-info-btn-2">
+              <button>OKRUGLAR</button>
+            </div>
+          </div>
+          
         </div>
       </div>
 
