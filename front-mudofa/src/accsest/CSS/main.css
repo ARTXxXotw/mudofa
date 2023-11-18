@@ -152,11 +152,14 @@ gap: 5px;
     display: none;
 }
 .big-navbar-modal-media{
+    position: relative;
+    z-index: 1000;
     position: absolute;
     top: 0;
     width: 100%;
     right: 100%;
     transition: 0.6s;
+    
 }
 @media (max-width:1200px) {
     .main-block {
@@ -568,6 +571,7 @@ justify-content: center;
     width: 100%;
     height: 60px;
     background: #003096;
+    display: flex;
 }
 .youtube-iframe-map-d-b{
     width: 100%;
@@ -580,7 +584,46 @@ justify-content: center;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+    position: relative;
+    transition: top 0.5s;
 }
+.animation-butn button{
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+border-radius: 15px;
+border: none;
+outline: none;
+background: #003096;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Inter', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-size: 15px;
+font-style: normal;
+font-weight: 600;
+color: white;
+text-transform: uppercase;
+text-decoration: none;
+transition: 0.4s;
+cursor: pointer;
+}
+.okruglar-block:hover button {
+    opacity: 1;
+    bottom: 25px;
+  }
+  .animation-butn button:hover{
+    background: #003096;
+  }
 .ookrug-img{
 width: 150px !important;
 }
@@ -689,9 +732,10 @@ justify-content: space-between;
 .main-info-ich{
     position: absolute;
     top: 8%;
-    left: 7%;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    left: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 50px;
 }
 .map-iframe-google{
@@ -752,6 +796,7 @@ transition: 0.5s;
     background: url("https://mudofaa.uz/wp-content/uploads/2021/09/расмий-сайти.png");
     background-size: 100% 100%;
     object-fit: contain;
+    margin-bottom: 20px;
 }
 .fon-a-card{
     width: 100%;
@@ -774,6 +819,7 @@ transition: 0.5s;
 .main-info-cardrs{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .card-nomer-2{
     width: 350px;
@@ -822,6 +868,7 @@ transition: 0.5s;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .alisher-img img{
     max-width: 180px;
@@ -930,4 +977,279 @@ transition: 0.5s;
     justify-content: space-between;
     gap: 10px;
     align-items: center;
+}
+.top-vidio i {
+color: white;
+font-size: 40px;
+cursor: pointer;
+}
+.top-vidio {
+    position: relative;
+    top: 12px;
+    width: 70px;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #3665c9d4;
+}
+.youtube-dagi-name-joy{
+    position: relative;
+    left: 30px;
+    display: flex;
+    align-items: center;
+}
+.youtube-dagi-name-joy h3{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+@media (max-width:1440px) {
+    .grid-card-1 {
+        width: 100%;
+        transition: 0.4s;
+        margin-bottom: 20px;
+    }
+    .map-pasida-btn button{
+        font-size: 30px;
+    }
+    .grid-card-img img {
+        width: 100%;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 1s ease;
+        box-shadow: 2px 3px 10px 10px rgba(172, 168, 168, 0.329);
+    }
+    .grid-card-text-info h2 {
+        font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+        color: black;
+        font-size: 1.2vw;
+        line-height: 25px;
+        font-weight: 800 !important;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .grid-card-text-info-2 h2 {
+        font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+        color: black;
+        font-size: 1.2vw;
+        line-height: 25px;
+        font-weight: 800 !important;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .grid-info-2-img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 35px #002cdd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+    .grid-card-text-info-2 p {
+        font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+        font-size: 10px;
+        color: #767676;
+        cursor: pointer;
+    }
+    .main-info-yangiliklar {
+        width: 60%;
+        margin-bottom: 40px;
+    }
+    .main-info-kop-oqilganlar {
+        width: 35%;
+        margin-bottom: 40px;
+    }
+    .main-info-btn button {
+        font-size: 30px;
+    }
+    .main-info-btn-2 button {
+        font-size: 30px;
+        scroll-behavior: smooth;
+    }
+}
+.main-info-kop-oqilganlar-2-media{
+    display: none;
+}
+.main-info-kop-oqilganlar-media{
+    display: none;
+}
+@media (max-width:1270px) {
+    .ookrug-text h2 {
+        font-size: 15px;
+    } 
+}
+@media (max-width:902px) {
+    .line-animatin {
+        width: 50%;
+        height: 200px;
+        background-color: #83b0bf;
+        transform: rotate(10deg);
+        position: relative;
+        top: -165px;
+        left: 23px;
+    }
+    .line-animatin-2 {
+        width: 50%;
+        height: 200px;
+        background-color: #83b0bf;
+        transform: rotate(-10deg);
+        position: relative;
+        top: -165px;
+        right: 23px;
+    }
+    #pasga{
+        position: relative;
+        top: 520px;
+    }
+    .main-info-block-big {
+        width: 100%;
+        height: 900px;
+        overflow: hidden;
+        position: relative;
+    }
+    .ulani-ucshab-turadi {
+        display: flex;
+        justify-content: space-between;
+    }
+    .grid-card {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .main-info-kop-oqilganlar-media{
+        display: block;
+    }
+    .main-info-kop-oqilganlar-media{
+        width: 95%;
+        margin: auto;
+    }
+    .main-info-kop-oqilganlar {
+        display: none;
+    }
+    .main-info-yangiliklar {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .main-info-kop-oqilganlar-2-media{
+        display: block;
+        width: 95%;
+        margin-bottom: 30px;
+        margin: auto;
+    }
+    .pagination-btn{
+        margin-bottom: 20px;
+    }
+    .main-block-2-ich{
+        padding-top: 20px;
+    }
+    .grid-card-text-info-2 h2 {
+        font-size:13px;
+        line-height: 20px;
+        font-weight: 800 !important;
+    }
+    .grid-card-text-info h2 {
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 800 !important;
+    }
+}
+@media (max-width:501px) {
+    footer {
+        width: 100% !important;
+        margin-bottom: 0 !important; 
+    }
+    .main-block-2 {
+        width: 100%;
+        margin: auto;
+        background: #e5e5e5;
+        margin-bottom: 50px;
+    }
+    .main-block-2-ich {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-info-kop-oqilganlar-2-media {
+        display: block;
+        width: 90%;
+        margin-bottom: 30px;
+        margin: auto;
+    }
+    .main-info-kop-oqilganlar-media {
+        width: 90%;
+        margin: auto;
+    }
+    .ookrug-text h2 {
+        font-size: 2.5vw;
+    }
+}
+@media (max-width:1530px) {
+    .rigth-animatin {
+        width: 60%;
+        height: 200px;
+        transform: rotate(10deg);
+        position: relative;
+        top: 150px;
+        right: 40px;
+        background: #83b0bf;
+    }
+    .rigth-animatin-2 {
+        width: 60%;
+        height: 200px;
+        transform: rotate(-10deg);
+        position: relative;
+        top: 150px;
+        left: 30px;
+        background: #83b0bf;
+    }
+}
+@media (max-width:780px) {
+    .main-info-cardrs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .card-nomer-1,
+    .card-nomer-2,
+    .card-nomer-3,
+    .card-nomer-4 {
+        width: 100%;
+        height: 350px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:735px) {
+    .main-info-block-big {
+        width: 100%;
+        height: 1800px;
+        overflow: hidden;
+        position: relative;
+    }
+    #pasga{
+        position: relative;
+        top: 1420px;
+    }
+}
+@media (max-width:678px) {
+    .footer {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 40px;
+        background: url(https://mudofaa.uz/wp-content/uploads/2022/05/FONNNNNN-scaled.jpg);
+        height: 800px;
+        background-position: center center;
+        background-size: cover;
+    }
 }

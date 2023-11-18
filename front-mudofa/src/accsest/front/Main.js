@@ -19,9 +19,11 @@ export default function Main() {
     //    document.querySelector(".menu-nav-on").style.right="100%";
     // }
     document.querySelector(".big-navbar-modal-media").style=` right: 0%;`
+    document.querySelector("body").style=` overflow: hidden;`
   }
 function closeModal(){
   document.querySelector(".big-navbar-modal-media").style=` right: 100%;`
+  document.querySelector("body").style=` overflow: scroll;`
 }
   useEffect(() => {
     const loadYouTubeAPI = () => {
@@ -178,86 +180,6 @@ function closeModal(){
                 )
               })}
 
-{/* 
-              <div className="grid-card-1" >
-                <div className="grid-card-img">
-                  <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-17_10-03-10.jpg" alt="" />
-                </div>
-                <div className="grid-card-text">
-                  <div className="yangiliklar">
-                    <span>YANGILIKLAR</span>
-                  </div>
-                  <div className="grid-card-text-info">
-                  <h2>“Yashil makon” loyihasida harbiylarning faol ishtiroki ta’minlanmoqda</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="grid-card-1" >
-                <div className="grid-card-img">
-                  <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-16_18-53-37.jpg" alt="" />
-                </div>
-                <div className="grid-card-text">
-                  <div className="yangiliklar">
-                    <span>YANGILIKLAR</span>
-                  </div>
-                  <div className="grid-card-text-info">
-                  <h2>Chirchiq oliy tank qoʻmondonlik-muhandislik bilim yurti 105 yoshda</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="grid-card-1" >
-                <div className="grid-card-img">
-                  <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-16_16-39-46-2.jpg" alt="" />
-                </div>
-                <div className="grid-card-text">
-                  <div className="yangiliklar">
-                    <span>YANGILIKLAR</span>
-                  </div>
-                  <div className="grid-card-text-info">
-                  <h2>“Keksalar uchun turizm oyligi”da harbiy xizmatchilar faol ishtirok etmoqda</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="grid-card-1" >
-                <div className="grid-card-img">
-                  <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-16_15-21-01.jpg" alt="" />
-                </div>
-                <div className="grid-card-text">
-                  <div className="yangiliklar">
-                    <span>YANGILIKLAR</span>
-                  </div>
-                  <div className="grid-card-text-info">
-                  <h2>Qashqadaryoning olis garnizonidagi harbiy qismda keng qamrovli tibbiy koʻrik tashil etildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                </div>
-              </div>
-
-
-              <div className="grid-card-1" >
-                <div className="grid-card-img">
-                  <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-16_11-59-25.jpg" alt="" />
-                </div>
-                <div className="grid-card-text">
-                  <div className="yangiliklar">
-                    <span>YANGILIKLAR</span>
-                  </div>
-                  <div className="grid-card-text-info">
-                  <h2>Harbiy xizmatchilarning tibbiyot boʻyicha bilimlari mustahkamlanmoqda</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                </div>
-              </div>
-               */}
             </div>
             <div className="pagination-btn">
             <button ><i class='bx bx-chevron-left' ></i></button>
@@ -334,7 +256,14 @@ function closeModal(){
             <iframe  src="https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div className="youtube-iframe-map">
-              <div className="siniy-block"></div>
+              <div className="siniy-block">
+                <div className="top-vidio">
+                    <i class='bx bx-play' ></i>
+                </div>
+                <div className="youtube-dagi-name-joy">
+                  <h3>Taktik tayorgarlik</h3>
+                </div>
+              </div>
               <div className="youtube-iframe-map-d-b">
 
               </div>
@@ -354,6 +283,9 @@ function closeModal(){
               <div className="ookrug-text">
                 <h2>Toshkent harbiy okrug</h2>
               </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
             </div>
             <div className="okruglar-block">
               <div className="ookrug-img">
@@ -361,6 +293,9 @@ function closeModal(){
               </div>
               <div className="ookrug-text">
                 <h2>janubiy-garbiy maxsus harbiy okrug </h2>
+              </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
               </div>
             </div>
             <div className="okruglar-block">
@@ -370,6 +305,9 @@ function closeModal(){
               <div className="ookrug-text">
                 <h2>MArkaziy jarbiy okrug</h2>
               </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
             </div>
             <div className="okruglar-block">
               <div className="ookrug-img">
@@ -378,18 +316,129 @@ function closeModal(){
               <div className="ookrug-text">
                 <h2>shimoliy-garbiy harbiy okrug</h2>
               </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
             </div>
           </div>
           
         </div>
+        <div className="main-info-kop-oqilganlar-media">
+            <div className="main-info-btn-2">
+              <button>OKRUGLAR</button>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>Toshkent harbiy okrug</h2>
+              </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>janubiy-garbiy maxsus harbiy okrug </h2>
+              </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>MArkaziy jarbiy okrug</h2>
+              </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>shimoliy-garbiy harbiy okrug</h2>
+              </div>
+              <div className="animation-butn">
+                <button>yangiliklar</button>
+              </div>
+            </div>
+          </div>
+          <div className="main-info-kop-oqilganlar-2-media">
+            <div className="main-info-btn-2">
+              <button>KO‘P O‘QILGAN</button>
+            </div>
+            <div className="grid-card-info-2-joy">
+              <div className="grid-info-2-img">
+                <div className="grid-nedacansa">
+                  <img src="https://mudofaa.uz/wp-content/uploads/2023/10/psixologik-scaled.jpg" alt="" />
+                </div>
+              </div>
+              <div className="grid-card-text-info-2">
+                  <h2>Muqaddasdir Vatan bayrogʻi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Qashqadaryoning olis garnizonidagi harbiy qismda keng qamrovli tibbiy koʻrik tashil etildi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Elektr uskunalari va isitish moslamalaridan foydalanishda yong‘in xavfsizligi talablariga rioya qiling</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Joylarda “Maʼnaviyat marafoni” yuqori kayfiyatda oʻtkazildi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Mudofaa vazirligi qo‘shinlarida “Yong‘in xavfsizligi oyligi” boshlandi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Jizzaxda “Eng ilg‘or divizion” ko‘rik tanlovi o‘tkazildi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Qo‘mondon Toshkent viloyati yoshlari bilan onlayn muloqot qildi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Ta’lim maskanida “Rahbar va yoshlar” uchrashuvi o‘tkazildi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Harbiy xizmatchilar “Yashil makon” umummilliy loyihasida faol ishtirok etmoqda</h2>
+                  <p>17.11.2023</p>
+                  </div>
+                  <div className="grid-card-text-info-2">
+                  <h2>Harbiy xizmatchilar imkoniyati cheklangan bolalarni bayram bilan qutladi</h2>
+                  <p>17.11.2023</p>
+                  </div>
+            </div>
+            <div className="pagination-btn">
+            <button ><i class='bx bx-chevron-left' ></i></button>
+              <button ><i class='bx bx-chevron-right' ></i></button>
+            </div>
+          </div>
       </div>
+
+
+
       <div className="main-block-indo-rasmlar">
         <div className="main-info-block-big">
           <div className="ulani-ucshab-turadi">
           <div className="line-animatin"></div>
           <div className="line-animatin-2"></div>
           </div>
-          <div className="ulani-ucshab-turadi">
+          <div className="ulani-ucshab-turadi" id='pasga'>
             <div className="rigth-animatin"></div>
             <div className="rigth-animatin-2"></div>
           </div>
