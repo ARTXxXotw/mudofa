@@ -2,11 +2,33 @@ import React, { useEffect,useState } from 'react'
 import '../CSS/main.css'
 import data from './data'
 import logo1 from '../IMG/6-1-removebg-preview.png'
+import axios from 'axios'
 
 export default function Main() {
-// const slice = data.slice(0, 6);
+  const [state,setState]=useState(6)
+  const [key,setKey]=useState(0)
+  const [data, dataKey] = useState([])
+  useEffect(()=>{
+    axios.get(`https://new-uzbek.onrender.com/api/v1/new_action`).then(res =>{
+      console.log(res.data);
+      dataKey(res.data)
+    })
+  },[])
+  const slice = data.slice(key, state);
+  console.log(slice, "<------- Otash");
 
-// console.log(slice);
+  function PaginationRight(){
+    if (slice.length==6) {
+      setKey(key+6)
+    setState(state+6)
+    }
+  }
+  function PaginationLeft(){
+   if(key!==0){
+    setKey(key-6)
+    setState(state-6)
+   }
+  }
 
   const videoId = "xCxWId-0Qtw";
   let player;
@@ -161,19 +183,19 @@ function closeModal(){
             </div>
             <div className="grid-card">
 
-              {data.map((item,index)=>{
+              {slice.map((item,index)=>{
                 return(
                   <div className="grid-card-1" >
                   <div className="grid-card-img">
-                    <img src={item.img} alt="logo" />
+                    <img src={item.image} alt="No image" />
                   </div>
                   <div className="grid-card-text">
                     <div className="yangiliklar">
                       <span>YANGILIKLAR</span>
                     </div>
                     <div className="grid-card-text-info">
-                    <h2>{item.nome}</h2>
-                    <p>{item.sanasi}</p>
+                    <h2>{item.desc}</h2>
+                    <p>{item.time_create}</p>
                     </div>
                   </div>
                 </div>
@@ -182,8 +204,8 @@ function closeModal(){
 
             </div>
             <div className="pagination-btn">
-            <button ><i class='bx bx-chevron-left' ></i></button>
-              <button ><i class='bx bx-chevron-right' ></i></button>
+            <button onClick={()=>PaginationLeft()} ><i class='bx bx-chevron-left' ></i></button>
+              <button onClick={()=>PaginationRight()} ><i class='bx bx-chevron-right' ></i></button>
             </div>
           </div>
 
