@@ -187,6 +187,26 @@ function closeModal(){
             </div>
           </div>
 
+          <div className="icon-position-absalute">
+            <div className="kvadrat-icon">
+            <i class='bx bxl-facebook' ></i>
+            </div>
+            <div className="kvadrat-icon-2">
+            <i class='bx bxl-instagram' ></i>
+            </div>
+            <div className="kvadrat-icon-3">
+            <i class='bx bxl-telegram' ></i>
+            </div>
+            <div className="kvadrat-icon-4">
+            <i class='bx bxl-youtube' ></i>
+            </div>
+            <div className="kvadrat-icon-5">
+              <i class='bx bxl-play-store'></i>
+            </div>
+            <div className="kvadrat-icon-6">
+              <i class='bx bxl-twitter'></i>
+            </div>
+          </div>
 
 
           <div className="main-info-kop-oqilganlar">
@@ -372,6 +392,9 @@ function closeModal(){
               </div>
             </div>
           </div>
+
+
+
           <div className="main-info-kop-oqilganlar-2-media">
             <div className="main-info-btn-2">
               <button>KO‘P O‘QILGAN</button>
@@ -492,7 +515,6 @@ function closeModal(){
           <div className="fon-a-card-2"></div>
         </div>
        </div>
-
        <footer className='footer'>
         <div className="footer-fon">
           <div className="alisher-navoiy">
@@ -541,6 +563,7 @@ function closeModal(){
           </div>
         </div>
        </footer>
+
     </div>
   )
 }

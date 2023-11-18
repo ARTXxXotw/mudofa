@@ -1012,6 +1012,13 @@ cursor: pointer;
     font-weight: 400;
     color: #fff;
 }
+.main-info-kop-oqilganlar-2-media{
+    display: none;
+}
+.main-info-kop-oqilganlar-media{
+    display: none;
+}
+
 @media (max-width:1440px) {
     .grid-card-1 {
         width: 100%;
@@ -1076,12 +1083,6 @@ cursor: pointer;
         font-size: 30px;
         scroll-behavior: smooth;
     }
-}
-.main-info-kop-oqilganlar-2-media{
-    display: none;
-}
-.main-info-kop-oqilganlar-media{
-    display: none;
 }
 @media (max-width:1270px) {
     .ookrug-text h2 {
@@ -1253,3 +1254,99 @@ cursor: pointer;
         background-size: cover;
     }
 }
+.icon-position-absalute{
+    position: absolute;
+    right: 0;
+    position: fixed;
+}
+.kvadrat-icon{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center ;
+    justify-content: center ;
+    color: white;
+    font-size: 25px;
+    background: #003096;
+    border-top-left-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.kvadrat-icon:hover,
+.kvadrat-icon-2:hover,
+.kvadrat-icon-3:hover,
+.kvadrat-icon-4:hover,
+.kvadrat-icon-5:hover,
+.kvadrat-icon-6:hover
+{
+transform:translate(-10px);
+}
+.kvadrat-icon-2{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    background: #e878e8;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.kvadrat-icon-3{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    background: #003096;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.kvadrat-icon-4{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    background: #e51b1b;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.kvadrat-icon-5{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    background: #81d742;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.kvadrat-icon-6{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 25px;
+    background: #00bde2;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+/* 81d742 */
