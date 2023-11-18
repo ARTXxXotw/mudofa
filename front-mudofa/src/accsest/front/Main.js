@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import '../CSS/main.css'
 import data from './data'
+import logo1 from '../IMG/6-1-removebg-preview.png'
 
 export default function Main() {
 // const slice = data.slice(0, 6);
@@ -333,8 +334,9 @@ function closeModal(){
             <iframe  src="https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div className="youtube-iframe-map">
-              <div className="siniy-block">
-                
+              <div className="siniy-block"></div>
+              <div className="youtube-iframe-map-d-b">
+
               </div>
             </div>
           </div>
@@ -345,11 +347,151 @@ function closeModal(){
             <div className="main-info-btn-2">
               <button>OKRUGLAR</button>
             </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>Toshkent harbiy okrug</h2>
+              </div>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>janubiy-garbiy maxsus harbiy okrug </h2>
+              </div>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>MArkaziy jarbiy okrug</h2>
+              </div>
+            </div>
+            <div className="okruglar-block">
+              <div className="ookrug-img">
+                <img src={logo1} alt="" />
+              </div>
+              <div className="ookrug-text">
+                <h2>shimoliy-garbiy harbiy okrug</h2>
+              </div>
+            </div>
           </div>
           
         </div>
       </div>
+      <div className="main-block-indo-rasmlar">
+        <div className="main-info-block-big">
+          <div className="ulani-ucshab-turadi">
+          <div className="line-animatin"></div>
+          <div className="line-animatin-2"></div>
+          </div>
+          <div className="ulani-ucshab-turadi">
+            <div className="rigth-animatin"></div>
+            <div className="rigth-animatin-2"></div>
+          </div>
+          <div className="main-info-ich">
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/qurolli-kuchlar.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/tibbiyot.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/gosptal.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/harbiy-meros-.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/korrupsiya.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/jamoat.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/maslahat.png" alt="" />
+            </div>
+            <div className="frid-rasm">
+              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/himoya.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="map-iframe-google">
+        <div className="ifrmae-google">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6172031.574941159!2d54.5855437398662!3d40.944520168533174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b20a5d676b1%3A0xca0a6dad7e841e20!2z0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1700277345797!5m2!1sru!2s"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div className="map-pasida-btn">
+        <button>foydali havolalar</button>
+      </div>
+       <div className="main-info-cardrs">
+        <div className="card-nomer-1">
+          <div className="fon-a-card"></div>
+        </div>
+        <div className="card-nomer-2">
+          <div className="fon-a-card"></div>
+        </div>
+        <div className="card-nomer-3">
+          <div className="fon-a-card-1"></div>
+        </div>
+        <div className="card-nomer-4">
+          <div className="fon-a-card-2"></div>
+        </div>
+       </div>
 
+       <footer className='footer'>
+        <div className="footer-fon">
+          <div className="alisher-navoiy">
+            <div className="alisher-img">
+              <img src="https://mudofaa.uz/wp-content/uploads/2021/09/%D0%BC%D1%83%D0%B4%D0%BE%D1%84%D0%B0%D0%B0-%D0%BB%D0%BE%D0%B3%D0%BE2-300x300.png" alt="" />
+            </div>
+            <div className="alisher-icon">
+              <div className="icon-hover-al">
+                 <i class='bx bxl-facebook' id='facebook1' ></i>
+              </div>
+              <div className="icon-hover-al">
+              <i class='bx bxl-instagram' id='instagram1' ></i>
+              </div>
+              <div className="icon-hover-al">
+              <i class='bx bxl-telegram' id='telegram1' ></i>
+              </div>
+              <div className="icon-hover-al">
+              <i class='bx bxl-youtube' id='youtube1' ></i>
+              </div>
+            </div>
+          </div>
+          <div className="call-me">
+            <h3>Shanba, Noyabr 18, 2023</h3>
+            <div className="call-me-tel">
+              <div className="tel-icon">
+                <i class='bx bxs-phone'></i>
+              </div>
+              <div className="tel-p">
+                <p>+99871 269-81-72</p>
+                <p>+99871 269-81-50</p>
+              </div>
+            </div>
+            <div className="call-me-input-btn">
+             <form action="">
+             <input type="text" required /><button type='button'><i class='bx bx-search'></i></button>
+             </form>
+            </div>
+            <div className="play-mark">
+              <div className="img-paly-mark">
+                <img src="https://mudofaa.uz/wp-content/uploads/2022/05/IOS-2-300x88.png" alt="" />
+              </div>
+              <div className="img-paly-mark">
+                <img src="https://mudofaa.uz/wp-content/uploads/2022/05/GOOGLE-PLAY-300x88.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+       </footer>
     </div>
   )
 }

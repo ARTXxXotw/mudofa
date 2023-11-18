@@ -11,6 +11,7 @@
     position: relative;
     margin-bottom: 40px;
 }
+
 .main-block nav{
     height: 40px;
     background-color: #003096;
@@ -567,4 +568,366 @@ justify-content: center;
     width: 100%;
     height: 60px;
     background: #003096;
+}
+.youtube-iframe-map-d-b{
+    width: 100%;
+    height: 350px;
+    background: #161515;
+}
+.okruglar-block{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.ookrug-img{
+width: 150px !important;
+}
+.ookrug-img img{
+    width: 100%;
+    height: 100%;
+}
+.ookrug-text h2{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.4s;
+}
+.ookrug-text{
+    width: 80%;
+}
+
+.main-block-indo-rasmlar{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.main-info-block-big{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+.ulani-ucshab-turadi{
+    display: flex;
+justify-content: space-between;
+}
+.line-animatin{
+    /* width: 55%;
+    height: 200px;
+    background: #83b0bf;
+    transform: rotate(10deg);
+    position: relative;
+    top: -180px;
+    left: 25px; */
+    width: 50%;
+    height: 200px;
+    background-color: #83b0bf;
+    transform: rotate(10deg);
+    position: relative;
+    top: -135px;
+    left: 23px;
+}
+
+.line-animatin-2{
+    /* width: 55%;
+    height: 200px;
+    background: #83b0bf;
+    transform: rotate(-10deg);
+    position: relative;
+    top: -150px;
+    right: 21px; */
+    width: 50%;
+    height: 200px;
+    background-color: #83b0bf;
+    transform: rotate(-10deg);
+    position: relative;
+    top: -135px;
+    right: 23px;
+}
+
+.rigth-animatin{
+    width: 60%;
+    height: 200px;
+    transform: rotate(10deg);
+    position: relative;
+    top: 135px;
+    right: 40px;
+    background: #83b0bf;
+}
+.rigth-animatin-2{
+    width: 60%;
+    height: 200px;
+    transform: rotate(-10deg);
+    position: relative;
+    top: 135px;
+    left: 30px;
+    background: #83b0bf;
+}
+
+.frid-rasm {
+    width: 300px;
+    height: 150px;
+    z-index: 100;
+}
+.frid-rasm img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.main-info-ich{
+    position: absolute;
+    top: 8%;
+    left: 7%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 50px;
+}
+.map-iframe-google{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+.ifrmae-google iframe{
+    width: 100%;
+    height: 100%;
+}
+.ifrmae-google{
+    width: 100%;
+    height: 700px;
+}
+.map-pasida-btn{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.map-pasida-btn button{
+    width: 100%;
+    background: #003096;
+    box-shadow: 0px 2px 16px 0px rgba(77,178,236,0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 4px;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 5px;
+transition: 0.5s;
+}
+.map-pasida-btn button:hover{
+    scale: 0.95;
+    background: #0e2e71;
+}
+.main-info-cardrs{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.card-nomer-1{
+    width: 350px;
+    height: 250px;
+    background: url("https://mudofaa.uz/wp-content/uploads/2021/09/расмий-сайти.png");
+    background-size: 100% 100%;
+    object-fit: contain;
+}
+.fon-a-card{
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(30deg,rgba(0,19,38,0.4),rgba(0,0,0,0.1));
+    cursor: pointer;
+}
+.fon-a-card-1{
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(30deg,rgba(0,19,38,0.4),rgba(0,0,0,0.1));
+    cursor: pointer;
+}
+.fon-a-card:hover{
+    background: #f9b700b3;
+}
+.fon-a-card-1:hover{
+    background: #0e6c9fb0;
+}
+.main-info-cardrs{
+    display: flex;
+    justify-content: space-between;
+}
+.card-nomer-2{
+    width: 350px;
+    height: 250px;
+    background: url("https://mudofaa.uz/wp-content/uploads/2021/09/портал.png");
+    background-size: 100% 100%;
+    object-fit: contain;
+}
+.card-nomer-3{
+    width: 350px;
+    height: 250px;
+    background: url("https://mudofaa.uz/wp-content/uploads/2021/09/академия-прокуратуры.png'");
+    background-size: 100% 100%;
+    object-fit: contain;
+}
+.card-nomer-4{
+    width: 350px;
+    height: 250px;
+    background: url("https://mudofaa.uz/wp-content/uploads/2021/09/OZBEKISTON-RESPUBLIKASI.png'");
+    background-size: 100% 100%;
+    object-fit: contain;
+}
+.fon-a-card-2{
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(30deg,rgba(0,19,38,0.4),rgba(0,0,0,0.1));
+    cursor: pointer;
+}
+.fon-a-card-2:hover{
+  background: rgba(14, 180, 47, 0.618);
+}
+.footer{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 40px;
+    background: url("https://mudofaa.uz/wp-content/uploads/2022/05/FONNNNNN-scaled.jpg");
+    height: 600px;
+    background-position:center center;
+    background-size:cover ;
+}
+.footer-fon{
+    width: 100%;
+    height: 100%;
+    /* filter: rgba(16,211,201,0.2); */
+    background: #0e2d718b;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.alisher-img img{
+    max-width: 180px;
+}
+.icon-hover-al{
+    width: 47.6px;
+    height: 47.6px;
+    margin: 5px 10px 5px 0;
+    background: rgba(255,255,255,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+.alisher-icon{
+    display: flex;
+    gap: 10px;
+}
+#facebook1:hover,
+#instagram1:hover,
+#telegram1:hover,
+#youtube1:hover{
+    color: #f9b800;
+    cursor: pointer;
+}
+.alisher-navoiy{
+    text-align: center;
+}
+.call-me h3{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.tel-icon i{
+    color: white;
+    font-size: 40px;
+}
+.call-me-tel{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.tel-p p{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 0 !important;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.call-me-input-btn form{
+    display: flex;
+    margin-bottom: 40px;
+}
+.call-me-input-btn input{
+    width:280px;
+    min-height: 32px;
+    outline: none;
+    padding-left: 20px;
+}
+.call-me-input-btn button{
+    height: 40px;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    position: relative;
+    right: 12px;
+}
+.img-paly-mark{
+    width: 150px;
+    height: 50px;
+}
+.img-paly-mark img{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100% ;
+    object-fit: contain;
+    position: relative;
+    right: 10px;
+}
+.play-mark{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
 }
