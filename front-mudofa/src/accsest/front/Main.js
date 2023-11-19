@@ -195,7 +195,7 @@ function closeModal(){
                     </div>
                     <div className="grid-card-text-info">
                     <h2>{item.desc}</h2>
-                    <p>{item.time_create}</p>
+                    <p>{item.time_create.slice(0,10)}</p>
                     </div>
                   </div>
                 </div>
@@ -307,7 +307,7 @@ function closeModal(){
                 </div>
               </div>
               <div className="youtube-iframe-map-d-b">
-
+                
               </div>
             </div>
           </div>
