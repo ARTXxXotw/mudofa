@@ -30,8 +30,25 @@ export default function Main() {
    }
   }
 
+  const videoURLs = [
+    "https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM",
+    "https://www.youtube.com/embed/GsqAh9Sn2nY?si=ZYEJwUpeVaT9zhTg",
+    "https://www.youtube.com/embed/iJzESxE3pI8?si=gWz1F4qGA7xsL99f",
+
+  ];
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+
+  const keyingiVideo = () => {
+    setCurrentVideoIndex(prevIndex => (prevIndex + 1) % videoURLs.length);
+  };
+
   const videoId = "xCxWId-0Qtw";
   let player;
+
+
+
+  
 
   function navbarMenu(){
     //  var y= document.querySelector(".menu-nav-on").style.right;
@@ -294,20 +311,27 @@ function closeModal(){
             <div className="main-info-btn">
               <button>MULTIMEDIA</button>
             </div>
-            <div className="youtube-iframe">
-            <iframe  src="https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div className="youtube-iframe" id='videoPlayerContainer'>
+              <div className="videoWrapper">
+              <iframe
+            className="videoIframe"
+            width="560"
+            height="315"
+            src={videoURLs[currentVideoIndex]}
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+              </div>
+            {/* <iframe  src="https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             </div>
             <div className="youtube-iframe-map">
               <div className="siniy-block">
-                <div className="top-vidio">
-                    <i class='bx bx-play' ></i>
-                </div>
                 <div className="youtube-dagi-name-joy">
-                  <h3>Taktik tayorgarlik</h3>
+                  <h3>Multimedia</h3>
                 </div>
-              </div>
-              <div className="youtube-iframe-map-d-b">
-                
+                <div className="btn-keying">
+                <button onClick={()=>keyingiVideo()}>Next Video -></button>
+                </div>
               </div>
             </div>
           </div>
@@ -571,7 +595,7 @@ function closeModal(){
             </div>
             <div className="call-me-input-btn">
              <form action="">
-             <input type="text" required /><button type='button'><i class='bx bx-search'></i></button>
+             <input type="text" required /><button type='no'><i class='bx bx-search'></i></button>
              </form>
             </div>
             <div className="play-mark">

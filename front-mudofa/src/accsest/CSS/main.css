@@ -227,6 +227,9 @@ gap: 5px;
     }
 }
 @media (max-width:1000px) {
+    .icon-position-absalute{
+        display: none;
+    }
     .main-block nav{
         display: none;
     }
@@ -563,15 +566,21 @@ justify-content: center;
     width: 100%;
     height: 500px;
 }
-.youtube-iframe iframe{
+.videoWrapper{
     width: 100%;
-    height: 100%;
+    height: 500px;
+}
+.youtube-iframe iframe{
+    width: 100% !important;
+    height: 100% !important;
 }
 .siniy-block{
     width: 100%;
     height: 60px;
     background: #003096;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .youtube-iframe-map-d-b{
     width: 100%;
@@ -1011,6 +1020,27 @@ cursor: pointer;
     font-size: 20px;
     font-weight: 400;
     color: #fff;
+}
+.btn-keying button{
+    background: none;
+    border: none;
+    position: relative;
+    right:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    cursor: pointer;
 }
 .main-info-kop-oqilganlar-2-media{
     display: none;
