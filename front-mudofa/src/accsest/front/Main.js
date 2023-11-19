@@ -15,7 +15,7 @@ export default function Main() {
     })
   },[])
   const slice = data.slice(key, state);
-  console.log(slice, "<------- Otash");
+  console.log(slice, "<------- abzal");
 
   function PaginationRight(){
     if (slice.length==6) {
