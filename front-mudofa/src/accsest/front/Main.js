@@ -1,6 +1,5 @@
 import React, { useEffect,useState } from 'react'
 import '../CSS/main.css'
-import data from './data'
 import logo1 from '../IMG/6-1-removebg-preview.png'
 import axios from 'axios'
 
@@ -322,7 +321,6 @@ function closeModal(){
             allowFullScreen
           ></iframe>
               </div>
-            {/* <iframe  src="https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             </div>
             <div className="youtube-iframe-map">
               <div className="siniy-block">
@@ -330,7 +328,7 @@ function closeModal(){
                   <h3>Multimedia</h3>
                 </div>
                 <div className="btn-keying">
-                <button onClick={()=>keyingiVideo()}>Next Video -></button>
+                <button onClick={()=>keyingiVideo()}>Next Video <i class='bx bx-left-arrow-alt bx-rotate-180' ></i></button>
                 </div>
               </div>
             </div>

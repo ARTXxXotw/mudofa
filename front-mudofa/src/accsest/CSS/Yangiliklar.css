@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@1,9..40&family=Fira+Sans:wght@500&family=Inter:wght@500&family=Merriweather:ital@1&family=Open+Sans:wght@500&family=Poppins&family=Roboto:ital,wght@0,400;0,700;1,100;1,500&family=Rubik&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.nav-top-menu-1{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #003096;
+    
+}
+@media (max-width:1200px) {
+    .nav-top-menu-1 {
+        gap: 30px;
+    }
+    .nav-top-menu-1 {
+        width: 90%;
+        position: absolute;
+        top: 40px;
+        padding-top: 5px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding-left: 20px;
+    }
+}
+@media (max-width:1000px) {
+    .nav-top-menu{
+        display: none;
+    }
+}
+#left-balki{
+    padding-left: 30px;
+}
+.main-ikkinchi-tarab-yangilikar{
+    width: 90%;
+    margin: auto;
+}
+#margin-button{
+    margin-bottom: 120px;
+}
+.home-belgisi-yol{
+    display: flex;
+    align-items: center;
+}
+.home-belgisi-yol p{
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif; 
+    font-size: 15px;
+    color: #c3c3c3cc;
+    font-weight: 0 !important;
+    line-height: 18px;
+    padding-top: 1px;
+    padding-bottom: 15px
+}
+.qiyshayib{
+    width: 55%;
+    margin-left: 170px;
+}
+.sozlaga-yangiliklar-tepa h2{
+    font-size: 40px;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif; 
+    color: #111111;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.qancha-oqilgan-joy{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.prasmtor{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+.sana-data p{
+    font-family: 'Open Sans', 'Open Sans Regular', sans-serif;
+    font-size: 14px;
+    margin-bottom: 7px;
+    line-height: 1;
+color:  #767676;
+}
+.facebok{
+    -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.31);
+    box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.31);
+width: 50px;
+height: 70px;
+border-radius: 2px;
+background-color: #516eab;
+padding-left: 13px;
+padding-right: 13px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 40px;
+cursor: pointer;
+}
+.icon-kotta-yangiliklar{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+.telegram{
+    -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.31);
+    box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.31);
+    width: 50px;
+    height: 70px;
+    border-radius: 2px;
+    background-color: #179cde;
+    padding-left: 13px;
+    padding-right: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.yangiliklar-img{
+    width: 100%;
+    height: 450px;
+    background-color: red;
+    margin-bottom: 20px;
+}
+.yangiliklar-img img{
+    width: 100% !important;
+    height: 100% !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+}
+.yangiliklar-text{
+    margin-bottom: 20px;
+}
+.yangiliklar-text p{
+    font-size: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif; 
+    color: black;
+    line-height: 35px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
