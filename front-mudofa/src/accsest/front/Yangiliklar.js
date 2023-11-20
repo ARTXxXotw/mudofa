@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../CSS/Yangiliklar.css'
+import axios from 'axios';
 
 export default function Yangiliklar() {
+  const [date,setDate]=useState([]);
+  useEffect(()=>{
+    axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res =>{
+      setDate(res.data); 
+    })
+  },)
     function navbarMenu(){
         //  var y= document.querySelector(".menu-nav-on").style.right;
         // if(y==" right: 100%;"){
@@ -24,12 +31,18 @@ export default function Yangiliklar() {
             <p>Payshanba, Noyabr 16, 2023</p>
             <p className='nav-hover-link'>Maxsus imkoniyatlar</p>
             <div className="nav-icon">
-            <i class='bx bxl-facebook' id='facebook' ></i>
-            <i class='bx bxl-instagram' id='instagram' ></i>
-            <i class='bx bx-envelope'  ></i>
-            <i class='bx bxl-telegram' id='telegram'  ></i>
-            <i class='bx bxl-twitter' id='twitter' ></i>
-            <i class='bx bxl-youtube' id='youtube' ></i>
+            {date.map((item)=>{
+              return(
+                <>
+                <a href={item.facebook}><i class='bx bxl-facebook' id='facebook' ></i></a>
+                <a href={item.instagram}><i class='bx bxl-instagram' id='instagram' ></i></a>
+                <a href={item.email}><i class='bx bx-envelope'  ></i></a>
+               <a href={item.telegram}> <i class='bx bxl-telegram' id='telegram'  ></i></a>
+               <a href={item.twitter}>  <i class='bx bxl-twitter' id='twitter' ></i></a>
+               <a href={item.youtobe}> <i class='bx bxl-youtube' id='youtube' ></i></a>
+                </>
+              )
+            })}
             </div>
           </div>
         </nav>
@@ -50,7 +63,7 @@ export default function Yangiliklar() {
           </div>
         </div>
 
-        <div className="nav-media-menu">
+        <div className="nav-media-menu" id='pasadssad'>
           <div className="nav-media-menu-ich">
           <div className="menu-nav">
              <i class='bx bx-menu' onClick={()=>navbarMenu()}></i>
@@ -64,7 +77,40 @@ export default function Yangiliklar() {
           </div>
         </div>
       </div>
-
+      <div className="big-navbar-modal-media">
+      <div className="menu-nav-on">
+        <div className="menu-nav-on-icon">
+          <div className="menu-on-icon">
+          {date.map((item)=>{
+              return(
+                <>
+                <a href={item.facebook}><i class='bx bxl-facebook' id='facebook' ></i></a>
+                <a href={item.instagram}><i class='bx bxl-instagram' id='instagram' ></i></a>
+                <a href={item.email}><i class='bx bx-envelope'  ></i></a>
+               <a href={item.telegram}> <i class='bx bxl-telegram' id='telegram'  ></i></a>
+               <a href={item.twitter}>  <i class='bx bxl-twitter' id='twitter' ></i></a>
+               <a href={item.youtobe}> <i class='bx bxl-youtube' id='youtube' ></i></a>
+                </>
+              )
+            })}
+          </div>
+          <div className="menu-on-x">
+          <i class='bx bx-x' onClick={()=>closeModal()} ></i>
+          </div>
+        </div>
+        <div className="menu-nav-on-text">
+          <div className="menu-icon-home-onn">
+             <i class='bx bxs-home'></i>
+          </div>
+          <div className="navbar-modal-ich-menu-text">
+            <a href="#">Vazirlik haqida</a>
+          </div>
+          <div className="navbar-modal-ich-menu-text">
+            <a href="#">Yangiliklar</a>
+          </div>
+        </div>
+      </div>
+      </div>
 
 
       <div className="main-ikkinchi-tarab-yangilikar">
@@ -89,10 +135,22 @@ export default function Yangiliklar() {
             </div>
             <div className="icon-kotta-yangiliklar">
                 <div className="facebok">
-                <i class='bx bxl-facebook' ></i>
+                {date.map((item)=>{
+                  return(
+                    <>
+                    <a href={item.facebook}><i class='bx bxl-facebook' ></i></a>
+                    </>
+                  )
+                })}
                 </div>
                 <div className="telegram">
-                <i class='bx bxl-telegram' ></i>
+                {date.map((item)=>{
+                  return(
+                    <>
+                    <a href={item.telegram}><i class='bx bxl-telegram' ></i></a>
+                    </>
+                  )
+                })}
                 </div>
             </div>
             <div className="yangiliklar-block-info">

@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.pastarab-all-news-grid{
+    width: 90%;
+    margin: auto;
+}
+.grid-news-all{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+@media (max-width:1001px) {
+    .pastarab-all-news-grid{
+        position: relative;
+        top: 120px !important;
+        margin-bottom: 100px !important;
+    }
+}

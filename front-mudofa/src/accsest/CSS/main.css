@@ -1378,5 +1378,23 @@ transform:translate(-10px);
     border-bottom-left-radius: 10px;
     cursor: pointer;
     transition: 0.4s;
+
+}
+.frid-rasm img:hover{
+    filter: blur(2px);
+    cursor: pointer;
+
+}
+.nav-icon a{
+    color: white;
+}
+.icon-position-absalute a{
+    color: white;
+}
+.icon-hover-al a{
+    color: white;
+}
+.menu-on-icon a{
+    color: white;
 }
 /* 81d742 */

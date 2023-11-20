@@ -4,13 +4,24 @@ import logo1 from '../IMG/6-1-removebg-preview.png'
 import axios from 'axios'
 
 export default function Main() {
+  const [time,setTime]=useState(new Date())
   const [state,setState]=useState(6)
   const [key,setKey]=useState(0)
   const [data, dataKey] = useState([])
+  const [date,setDate]=useState([])
   useEffect(()=>{
-    axios.get(`https://new-uzbek.onrender.com/api/v1/new_action`).then(res =>{
+
+    setInterval(()=>setTime(new Date()),1000)
+
+
+    axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res =>{
       console.log(res.data);
       dataKey(res.data)
+      console.log(res.data)
+    })
+    axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res =>{
+      setDate(res.data);  
+    console.log(res.data);
     })
   },[])
   const slice = data.slice(key, state);
@@ -111,15 +122,22 @@ function closeModal(){
       <div className="main-block">
         <nav>
           <div className="navbar-text">
-            <p>Payshanba, Noyabr 16, 2023</p>
+            {/* <p>Payshanba, Noyabr 16, 2023</p> */}
+            <p>{time.toLocaleDateString()}</p>
             <p className='nav-hover-link'>Maxsus imkoniyatlar</p>
             <div className="nav-icon">
-            <i class='bx bxl-facebook' id='facebook' ></i>
-            <i class='bx bxl-instagram' id='instagram' ></i>
-            <i class='bx bx-envelope'  ></i>
-            <i class='bx bxl-telegram' id='telegram'  ></i>
-            <i class='bx bxl-twitter' id='twitter' ></i>
-            <i class='bx bxl-youtube' id='youtube' ></i>
+            {date.map((item)=>{
+              return(
+                <>
+                <a href={item.facebook}><i class='bx bxl-facebook' id='facebook' ></i></a>
+                <a href={item.instagram}><i class='bx bxl-instagram' id='instagram' ></i></a>
+                <a href={item.email}><i class='bx bx-envelope'  ></i></a>
+               <a href={item.telegram}> <i class='bx bxl-telegram' id='telegram'  ></i></a>
+               <a href={item.twitter}>  <i class='bx bxl-twitter' id='twitter' ></i></a>
+               <a href={item.youtobe}> <i class='bx bxl-youtube' id='youtube' ></i></a>
+                </>
+              )
+            })}
             </div>
           </div>
         </nav>
@@ -129,7 +147,13 @@ function closeModal(){
         <div className="nav-beck-fon"></div>
         <div className="nav-top-menu">
           <div className="nav-logo">
-            <img src="https://mudofaa.uz/wp-content/uploads/2023/06/1-MO-EMB.png" alt="logo" />
+           {date.map((item)=>{
+            return(
+              <>
+              <img src={item.image} alt="" />
+              </>
+            )
+           })}
           </div>
           <div className="nav-text-link">
             <div className="nav-link-home">
@@ -165,12 +189,21 @@ function closeModal(){
       <div className="menu-nav-on">
         <div className="menu-nav-on-icon">
           <div className="menu-on-icon">
-          <i class='bx bxl-facebook' id='facebook' ></i>
-            <i class='bx bxl-instagram' id='instagram' ></i>
-            <i class='bx bx-envelope'  ></i>
-            <i class='bx bxl-telegram' id='telegram'  ></i>
-            <i class='bx bxl-twitter' id='twitter' ></i>
-            <i class='bx bxl-youtube' id='youtube' ></i>
+            {date.map((item)=>{
+              return(
+                <>
+                <a href={item.facebook}><i class='bx bxl-facebook' id='facebook' ></i></a>
+                <a href={item.instagram}><i class='bx bxl-instagram' id='instagram' ></i></a>
+                <a href=""><i class='bx bx-envelope'  ></i></a>
+                <a href={item.telegram}><i class='bx bxl-telegram' id='telegram'  ></i></a>
+                <a href={item.twitter}> <i class='bx bxl-twitter' id='twitter' ></i></a>
+                <a href={item.youtobe}>  <i class='bx bxl-youtube' id='youtube' ></i></a>
+                </>
+              )
+            })}
+          
+           
+          
           </div>
           <div className="menu-on-x">
           <i class='bx bx-x' onClick={()=>closeModal()} ></i>
@@ -210,7 +243,7 @@ function closeModal(){
                       <span>YANGILIKLAR</span>
                     </div>
                     <div className="grid-card-text-info">
-                    <h2>{item.desc}</h2>
+                    <h2>{item.title}</h2>
                     <p>{item.time_create.slice(0,10)}</p>
                     </div>
                   </div>
@@ -227,22 +260,58 @@ function closeModal(){
 
           <div className="icon-position-absalute">
             <div className="kvadrat-icon">
-            <i class='bx bxl-facebook' ></i>
+          {date.map((item)=>{
+            return(
+              <>
+               <a href={item.facebook}> <i class='bx bxl-facebook' ></i></a>
+              </>
+            )
+          })}
             </div>
             <div className="kvadrat-icon-2">
-            <i class='bx bxl-instagram' ></i>
+            {date.map((item)=>{
+            return(
+              <>
+               <a href={item.instagram}> <i class='bx bxl-instagram' ></i></a>
+              </>
+            )
+          })}
             </div>
             <div className="kvadrat-icon-3">
-            <i class='bx bxl-telegram' ></i>
+            {date.map((item)=>{
+            return(
+              <>
+               <a href={item.instagram}> <i class='bx bxl-telegram' ></i></a>
+              </>
+            )
+          })}
             </div>
             <div className="kvadrat-icon-4">
-            <i class='bx bxl-youtube' ></i>
+            {date.map((item)=>{
+            return(
+              <>
+               <a href={item.youtobe}> <i class='bx bxl-youtube' ></i></a>
+              </>
+            )
+          })}
             </div>
             <div className="kvadrat-icon-5">
-              <i class='bx bxl-play-store'></i>
+            {date.map((item)=>{
+            return(
+              <>
+               <a href={item.play_market}> <i class='bx bxl-play-store' ></i></a>
+              </>
+            )
+          })}
             </div>
             <div className="kvadrat-icon-6">
-              <i class='bx bxl-twitter'></i>
+            {date.map((item)=>{
+            return(
+              <>
+               <a href={item.twitter}> <i class='bx bxl-play-store' ></i></a>
+              </>
+            )
+          })}
             </div>
           </div>
 
@@ -498,7 +567,6 @@ function closeModal(){
       </div>
 
 
-
       <div className="main-block-indo-rasmlar">
         <div className="main-info-block-big">
           <div className="ulani-ucshab-turadi">
@@ -563,32 +631,68 @@ function closeModal(){
         <div className="footer-fon">
           <div className="alisher-navoiy">
             <div className="alisher-img">
-              <img src="https://mudofaa.uz/wp-content/uploads/2021/09/%D0%BC%D1%83%D0%B4%D0%BE%D1%84%D0%B0%D0%B0-%D0%BB%D0%BE%D0%B3%D0%BE2-300x300.png" alt="" />
+             {date.map((item)=>{
+              return(
+                <>
+                <img src={item.image} alt="" />
+                </>
+              )
+             })}
             </div>
             <div className="alisher-icon">
               <div className="icon-hover-al">
-                 <i class='bx bxl-facebook' id='facebook1' ></i>
+                 {date.map((item)=>{
+                  return(
+                    <>
+                    <a href={item.facebook}><i class='bx bxl-facebook' id='facebook1' ></i></a>
+                    </>
+                  )
+                 })}
               </div>
               <div className="icon-hover-al">
-              <i class='bx bxl-instagram' id='instagram1' ></i>
+              {date.map((item)=>{
+                  return(
+                    <>
+                    <a href={item.instagram}><i class='bx bxl-instagram' id='instagram1' ></i></a>
+                    </>
+                  )
+                 })}
               </div>
               <div className="icon-hover-al">
-              <i class='bx bxl-telegram' id='telegram1' ></i>
+              {date.map((item)=>{
+                  return(
+                    <>
+                    <a href={item.telegram}><i class='bx bxl-telegram' id='telegram1' ></i></a>
+                    </>
+                  )
+                 })}
               </div>
               <div className="icon-hover-al">
-              <i class='bx bxl-youtube' id='youtube1' ></i>
+              {date.map((item)=>{
+                  return(
+                    <>
+                    <a href={item.youtobe}><i class='bx bxl-youtube' id='youtube1' ></i></a>
+                    </>
+                  )
+                 })}
               </div>
             </div>
           </div>
           <div className="call-me">
-            <h3>Shanba, Noyabr 18, 2023</h3>
+            <h3>{time.toLocaleDateString()}</h3>
             <div className="call-me-tel">
               <div className="tel-icon">
                 <i class='bx bxs-phone'></i>
               </div>
               <div className="tel-p">
-                <p>+99871 269-81-72</p>
-                <p>+99871 269-81-50</p>
+                {date.map((item)=>{
+                  return(
+                    <>
+                    <p>{item.phone1}</p>
+                    <p>{item.phone2}</p>
+                    </>
+                  )
+                })}
               </div>
             </div>
             <div className="call-me-input-btn">
