@@ -39,6 +39,16 @@ export default function Main() {
     currentTime.getMonth() + 1
   )}/${currentTime.getFullYear()}`;
 
+
+
+
+
+
+
+
+
+
+
   useEffect(()=>{
     // setInterval(()=>setTime(new Date()),1000)
     axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res =>{
@@ -392,11 +402,11 @@ function closeModal(){
                   <img src="https://mudofaa.uz/wp-content/uploads/2023/10/psixologik-scaled.jpg" alt="" />
                 </div>
               </div>
-              {slice1.map((item)=>{
+              {slice.map((item)=>{
                 return(
                   <>
                     <div className="grid-card-text-info-2" onClick={()=>NextPage(item.id)} >
-                  <h2>{item.desc}</h2>
+                  <h2>{item.title}</h2>
                   <p>{item.time_create.slice(0,10)}</p>
                   </div>
                   </>

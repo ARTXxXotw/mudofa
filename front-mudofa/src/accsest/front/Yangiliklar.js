@@ -126,25 +126,16 @@ export default function Yangiliklar() {
       <div className="main-ikkinchi-tarab-yangilikar">
         <div className="qiyshayib">
         <div className="home-belgisi-yol">
-            <p>Home <span><i class='bx bx-chevron-right' ></i></span>  Yangiliklar <span><i class='bx bx-chevron-right' ></i></span> {data1.map((item)=>{return<> {item.title} </>})}</p>
+            <p>Home <span><i class='bx bx-chevron-right' ></i></span>  Yangiliklar <span><i class='bx bx-chevron-right' ></i></span> {data1.map(item=>{return item.title})}</p>
         </div>
-        <div className="sozlaga-yangiliklar-tepa">
-            <h2>{data1.map((item)=>{
-              return(
-                <>
-               {item.title}
-                </>
-              )
-            })}</h2>
+        {data1.map(data=>{
+        return  <>
+         <div className="sozlaga-yangiliklar-tepa">
+            <h2>{data.title}</h2>
             <div className="qancha-oqilgan-joy">
                 <div className="sana-data">
-                    <p>{data1.map((item)=>{
-                      return(
-                        <>
-                        {item.time_create.slice(0,10)}
-                        </>
-                      )
-                    })}</p>
+                    <p>
+                        {data.time_create.slice(0,10)}</p>
                 </div>
                 <div className="prasmtor">
                     <div className="galz">
@@ -157,45 +148,29 @@ export default function Yangiliklar() {
             </div>
             <div className="icon-kotta-yangiliklar">
                 <div className="facebok">
-                {date.map((item)=>{
-                  return(
-                    <>
-                    <a href={item.facebook}><i class='bx bxl-facebook' ></i></a>
-                    </>
-                  )
-                })}
+                    <a href={data.facebook}><i class='bx bxl-facebook' ></i></a>
                 </div>
                 <div className="telegram">
-                {date.map((item)=>{
-                  return(
-                    <>
-                    <a href={item.telegram}><i class='bx bxl-telegram' ></i></a>
-                    </>
-                  )
-                })}
+                    <a href={data.telegram}><i class='bx bxl-telegram' ></i></a>
                 </div>
             </div>
+          {data.actions.map(item=>{
+            return(
+             <>
             <div className="yangiliklar-block-info">
                 <div className="yangiliklar-img">
-                   {data1.map((item)=>{
-                    return(
-                      <>
-                      <img src={item.image} alt="no image" />
-                      </>
-                    )
-                   })}
+                  <img src={item.image} alt="logo" />
                 </div>
                 <div className="yangiliklar-text">
-                    <p>{data1.map((item)=>{
-                      return(
-                        <>
-                        {item.actions[0].desc}
-                        </>
-                      )
-                    })}</p>
+                    <p>{item.desc}</p>
                 </div>
             </div>
+            </>
+            )
+          })}
         </div>
+          </>
+        })}
 
         </div>
       </div>
