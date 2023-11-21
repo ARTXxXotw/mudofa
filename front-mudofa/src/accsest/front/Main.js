@@ -2,13 +2,18 @@ import React, { useEffect,useState } from 'react'
 import '../CSS/main.css'
 import logo1 from '../IMG/6-1-removebg-preview.png'
 import axios from 'axios'
+import { NavLink } from "react-router-dom";
 
 export default function Main() {
   const [time,setTime]=useState(new Date())
   const [state,setState]=useState(6)
+  const [state1,setState1]=useState(6)
   const [key,setKey]=useState(0)
+  const [key1,setKey1]=useState(0)
   const [data, dataKey] = useState([])
+  const [data11, dataKey11] = useState([])
   const [date,setDate]=useState([])
+  const [boshqa,setBoshqa]=useState([])
 
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -39,6 +44,8 @@ export default function Main() {
     axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res =>{
       console.log(res.data);
       dataKey(res.data)  
+      dataKey11(res.data)  
+     
       axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res2 =>{
       setDate(res2.data);  
     console.log(res2.data);
@@ -47,6 +54,8 @@ export default function Main() {
     })
   
   },[])
+
+
   const slice = data.slice(key, state);
   console.log(slice, "<------- abzal");
 
@@ -63,6 +72,24 @@ export default function Main() {
    }
   }
 
+
+  const slice1 = data11.slice(key1, state1);
+  console.log(slice1, "<------- abzal2");
+
+  function PaginationRight1(){
+    if (slice1.length==6) {
+      setKey1(key1+6)
+    setState1(state1+6)
+    }
+  }
+  function PaginationLeft1(){
+   if(key1!==0){
+    setKey1(key1-6)
+    setState1(state1-6)
+   }
+  }
+
+
   const videoURLs = [
     "https://www.youtube.com/embed/0PUW2OpLJw4?si=FXdq361AZLyN-RBM",
     "https://www.youtube.com/embed/GsqAh9Sn2nY?si=ZYEJwUpeVaT9zhTg",
@@ -76,13 +103,25 @@ export default function Main() {
     setCurrentVideoIndex(prevIndex => (prevIndex + 1) % videoURLs.length);
   };
 
+
+
+  function NextPage(id){
+    setBoshqa(id)
+    localStorage.setItem("newsid",id)
+    window.location="/Yangiliklar"
+  }
+  
+
+
+
+
+
   const videoId = "xCxWId-0Qtw";
   let player;
 
 
 
   
-
   function navbarMenu(){
     //  var y= document.querySelector(".menu-nav-on").style.right;
     // if(y==" right: 100%;"){
@@ -97,6 +136,12 @@ function closeModal(){
   document.querySelector(".big-navbar-modal-media").style=` right: 100%;`
   document.querySelector("body").style=` overflow: scroll;`
 }
+
+
+
+
+
+
   useEffect(() => {
     const loadYouTubeAPI = () => {
       const tag = document.createElement('script');
@@ -146,8 +191,8 @@ function closeModal(){
         <nav>
           <div className="navbar-text">
             {/* <p>Payshanba, Noyabr 16, 2023</p> */}
-            <p>   {time.toLocaleDateString()}    <span> {formattedTime}</span> </p>
-            <p className='nav-hover-link'>Maxsus imkoniyatlar</p>
+            <p>  {formattedTime }     <span> {time.toDateString()} </span> </p>
+            <p style={{cursor:'pointer'}} className='nav-hover-link'>Maxsus imkoniyatlar</p>
             <div className="nav-icon">
             {date.map((item)=>{
               return(
@@ -155,9 +200,9 @@ function closeModal(){
                 <a href={item.facebook}><i class='bx bxl-facebook' id='facebook' ></i></a>
                 <a href={item.instagram}><i class='bx bxl-instagram' id='instagram' ></i></a>
                 <a href={item.email}><i class='bx bx-envelope'  ></i></a>
-               <a href={item.telegram}> <i class='bx bxl-telegram' id='telegram'  ></i></a>
-               <a href={item.twitter}>  <i class='bx bxl-twitter' id='twitter' ></i></a>
-               <a href={item.youtobe}> <i class='bx bxl-youtube' id='youtube' ></i></a>
+                <a href={item.telegram}> <i class='bx bxl-telegram' id='telegram'  ></i></a>
+                <a href={item.twitter}>  <i class='bx bxl-twitter' id='twitter' ></i></a>
+                <a href={item.youtobe}> <i class='bx bxl-youtube' id='youtube' ></i></a>
                 </>
               )
             })}
@@ -175,18 +220,16 @@ function closeModal(){
               <>
               <img src={item.image} alt="" />
               </>
-            )
-           })}
+                  )
+              })}
           </div>
           <div className="nav-text-link">
             <div className="nav-link-home">
               <i class='bx bxs-home'></i>
-            </div>
-            <div className="nav-link-text-a">
-              <a href="#">Vazirlik haqida</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
             </div> 
             <div className="nav-link-text-a">
-              <a href="#">Yangiliklar</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
+            <NavLink to="/Allnews"><a href="#">Yangiliklar</a> </NavLink>;
+              {/* <a href="#">Yangiliklar</a> */}
             </div>  
           </div>
         </div>
@@ -257,7 +300,7 @@ function closeModal(){
 
               {slice.map((item,index)=>{
                 return(
-                  <div className="grid-card-1"  >
+                  <div className="grid-card-1" onClick={()=>NextPage(item.id)} >
                   <div className="grid-card-img">
                     <img src={item.image} alt="No image" />
                   </div>
@@ -349,50 +392,20 @@ function closeModal(){
                   <img src="https://mudofaa.uz/wp-content/uploads/2023/10/psixologik-scaled.jpg" alt="" />
                 </div>
               </div>
-              <div className="grid-card-text-info-2">
-                  <h2>Muqaddasdir Vatan bayrogʻi</h2>
-                  <p>17.11.2023</p>
+              {slice1.map((item)=>{
+                return(
+                  <>
+                    <div className="grid-card-text-info-2" onClick={()=>NextPage(item.id)} >
+                  <h2>{item.desc}</h2>
+                  <p>{item.time_create.slice(0,10)}</p>
                   </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Qashqadaryoning olis garnizonidagi harbiy qismda keng qamrovli tibbiy koʻrik tashil etildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Elektr uskunalari va isitish moslamalaridan foydalanishda yong‘in xavfsizligi talablariga rioya qiling</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Joylarda “Maʼnaviyat marafoni” yuqori kayfiyatda oʻtkazildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Mudofaa vazirligi qo‘shinlarida “Yong‘in xavfsizligi oyligi” boshlandi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Jizzaxda “Eng ilg‘or divizion” ko‘rik tanlovi o‘tkazildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Qo‘mondon Toshkent viloyati yoshlari bilan onlayn muloqot qildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Ta’lim maskanida “Rahbar va yoshlar” uchrashuvi o‘tkazildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Harbiy xizmatchilar “Yashil makon” umummilliy loyihasida faol ishtirok etmoqda</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Harbiy xizmatchilar imkoniyati cheklangan bolalarni bayram bilan qutladi</h2>
-                  <p>17.11.2023</p>
-                  </div>
+                  </>
+                )
+              })}
             </div>
             <div className="pagination-btn">
-            <button ><i class='bx bx-chevron-left' ></i></button>
-              <button ><i class='bx bx-chevron-right' ></i></button>
+            <button onClick={()=>PaginationLeft1()} ><i class='bx bx-chevron-left' ></i></button>
+              <button onClick={()=>PaginationRight1()} ><i class='bx bx-chevron-right' ></i></button>
             </div>
           </div>
           
@@ -702,7 +715,7 @@ function closeModal(){
             </div>
           </div>
           <div className="call-me">
-            <h3>{time.toLocaleDateString()}</h3>
+            <h3>{time.toDateString()} </h3>
             <div className="call-me-tel">
               <div className="tel-icon">
                 <i class='bx bxs-phone'></i>

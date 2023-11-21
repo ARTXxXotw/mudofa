@@ -61,10 +61,7 @@ export default function Allnews() {
               <i class='bx bxs-home'></i>
             </div>
             <div className="nav-link-text-a">
-              <a href="#">Vazirlik haqida</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
-            </div> 
-            <div className="nav-link-text-a">
-              <a href="#">Yangiliklar</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
+              <a href="/Allnews">Yangiliklar</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
             </div>  
           </div>
         </div>

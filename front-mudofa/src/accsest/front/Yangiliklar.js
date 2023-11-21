@@ -4,11 +4,24 @@ import axios from 'axios';
 
 export default function Yangiliklar() {
   const [date,setDate]=useState([]);
+  const [data,setData]=useState([]);
+  const [data1,setData1]=useState([]);
   useEffect(()=>{
     axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res =>{
       setDate(res.data); 
     })
-  },)
+  },[])
+
+  useEffect((id)=>{
+
+       axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res=>{
+        const Filter=res.data.filter(item=>item.id==localStorage.getItem("newsid"))
+        setData1(Filter)
+        console.log(Filter,"Salom1");
+       
+      })
+    
+    },[])
     function navbarMenu(){
         //  var y= document.querySelector(".menu-nav-on").style.right;
         // if(y==" right: 100%;"){
@@ -53,9 +66,6 @@ export default function Yangiliklar() {
           <div className="nav-text-link">
             <div className="nav-link-home">
               <i class='bx bxs-home'></i>
-            </div>
-            <div className="nav-link-text-a">
-              <a href="#">Vazirlik haqida</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
             </div> 
             <div className="nav-link-text-a">
               <a href="#">Yangiliklar</a> {/* <span><i class='bx bx-chevron-down' ></i></span> */}
@@ -116,13 +126,25 @@ export default function Yangiliklar() {
       <div className="main-ikkinchi-tarab-yangilikar">
         <div className="qiyshayib">
         <div className="home-belgisi-yol">
-            <p>Home <span><i class='bx bx-chevron-right' ></i></span>  Yangiliklar <span><i class='bx bx-chevron-right' ></i></span>  “Yangi nafas” xalqaro marafoni o‘tkazildi — fotoreportaj</p>
+            <p>Home <span><i class='bx bx-chevron-right' ></i></span>  Yangiliklar <span><i class='bx bx-chevron-right' ></i></span> {data1.map((item)=>{return<> {item.title} </>})}</p>
         </div>
         <div className="sozlaga-yangiliklar-tepa">
-            <h2>“Yangi nafas” xalqaro marafoni o‘tkazildi — fotoreportaj</h2>
+            <h2>{data1.map((item)=>{
+              return(
+                <>
+               {item.title}
+                </>
+              )
+            })}</h2>
             <div className="qancha-oqilgan-joy">
                 <div className="sana-data">
-                    <p>19.11.2023</p>
+                    <p>{data1.map((item)=>{
+                      return(
+                        <>
+                        {item.time_create.slice(0,10)}
+                        </>
+                      )
+                    })}</p>
                 </div>
                 <div className="prasmtor">
                     <div className="galz">
@@ -155,10 +177,22 @@ export default function Yangiliklar() {
             </div>
             <div className="yangiliklar-block-info">
                 <div className="yangiliklar-img">
-                   <img src="https://mudofaa.uz/wp-content/uploads/2023/11/photo_2023-11-19_15-21-02-768x464.jpg" alt="" />
+                   {data1.map((item)=>{
+                    return(
+                      <>
+                      <img src={item.image} alt="no image" />
+                      </>
+                    )
+                   })}
                 </div>
                 <div className="yangiliklar-text">
-                    <p>Bugun poytaxtimiz koʻchalari boʻylab Oʻzbekiston Respublikasi davlat bayrogʻi qabul qilingan kun munosabati bilan “Yangi nafas” xalqaro marafoni oʻtkazildi. Erta tongda boshlangan yugurish musobaqasida turli yoshdagi hamyurtlarimiz, Qozogʻiston, Qirgʻiziston, Tojikiston va Turkmaniston Respublikalaridan kelgan yengil atletika klubi vakillari, Rossiya, Hindiston davlatlarining mamlakatimizda taʼlim olayotgan talabalari va oʻttizga yaqin xorijiy davlatlar fuqarolari sovrinli oʻrinlar uchun kurash olib bordi.</p>
+                    <p>{data1.map((item)=>{
+                      return(
+                        <>
+                        {item.actions[0].desc}
+                        </>
+                      )
+                    })}</p>
                 </div>
             </div>
         </div>

@@ -13,7 +13,6 @@ export default function App() {
                <Route path="/" exact component={Main} />
                <Route path="/Yangiliklar" exact component={Yangiliklar} />
                <Route path="/Allnews" exact component={Allnews} />
-           
              </Switch>
          </CompatRouter>
          </BrowserRouter>
