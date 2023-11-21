@@ -9,20 +9,43 @@ export default function Main() {
   const [key,setKey]=useState(0)
   const [data, dataKey] = useState([])
   const [date,setDate]=useState([])
+
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  const formatTime = (time) => {
+    return time < 10 ? `0${time}` : time;
+  };
+  const formattedTime = `${formatTime(currentTime.getHours())}:${formatTime(
+    currentTime.getMinutes()
+  )}:${formatTime(currentTime.getSeconds())}`;
+
+  const formattedDate = `${formatTime(currentTime.getDate())}/${formatTime(
+    currentTime.getMonth() + 1
+  )}/${currentTime.getFullYear()}`;
+
   useEffect(()=>{
-
-    setInterval(()=>setTime(new Date()),1000)
-
-
+    // setInterval(()=>setTime(new Date()),1000)
     axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res =>{
       console.log(res.data);
-      dataKey(res.data)
+      dataKey(res.data)  
+      axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res2 =>{
+      setDate(res2.data);  
+    console.log(res2.data);
+    })
       console.log(res.data)
     })
-    axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res =>{
-      setDate(res.data);  
-    console.log(res.data);
-    })
+  
   },[])
   const slice = data.slice(key, state);
   console.log(slice, "<------- abzal");
@@ -123,7 +146,7 @@ function closeModal(){
         <nav>
           <div className="navbar-text">
             {/* <p>Payshanba, Noyabr 16, 2023</p> */}
-            <p>{time.toLocaleDateString()}</p>
+            <p>   {time.toLocaleDateString()}    <span> {formattedTime}</span> </p>
             <p className='nav-hover-link'>Maxsus imkoniyatlar</p>
             <div className="nav-icon">
             {date.map((item)=>{
@@ -308,7 +331,7 @@ function closeModal(){
             {date.map((item)=>{
             return(
               <>
-               <a href={item.twitter}> <i class='bx bxl-play-store' ></i></a>
+               <a href={item.twitter}> <i class='bx bxl-twitter' ></i></a>
               </>
             )
           })}

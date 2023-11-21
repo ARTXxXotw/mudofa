@@ -1286,8 +1286,10 @@ cursor: pointer;
 }
 .icon-position-absalute{
     position: absolute;
-    right: 0;
     position: fixed;
+    top:30%;
+    right: 0;
+    
 }
 .kvadrat-icon{
     width: 40px;
@@ -1381,7 +1383,7 @@ transform:translate(-10px);
 
 }
 .frid-rasm img:hover{
-    filter: blur(2px);
+    filter: blur(1px);
     cursor: pointer;
 
 }
@@ -1398,3 +1400,7 @@ transform:translate(-10px);
     color: white;
 }
 /* 81d742 */
+.navbar-text span{
+    position: relative;
+    left: 10px;
+}
