@@ -52,7 +52,7 @@ export default function Allnews() {
             </div>
           </div>
         </nav>
-        <div className="nav-top-menu-1">
+        <div className="nav-top-menu-1" onClick={()=>window.location="/"}>
           <div className="nav-logo" id='left-balki'>
             <img src="https://mudofaa.uz/wp-content/uploads/2023/06/1-MO-EMB.png" alt="logo" />
           </div>

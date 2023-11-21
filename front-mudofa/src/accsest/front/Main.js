@@ -257,7 +257,7 @@ function closeModal(){
 
               {slice.map((item,index)=>{
                 return(
-                  <div className="grid-card-1" >
+                  <div className="grid-card-1"  >
                   <div className="grid-card-img">
                     <img src={item.image} alt="No image" />
                   </div>
