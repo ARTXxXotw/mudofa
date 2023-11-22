@@ -3,6 +3,14 @@ import '../CSS/main.css'
 import logo1 from '../IMG/6-1-removebg-preview.png'
 import axios from 'axios'
 import { NavLink } from "react-router-dom";
+import rasm1 from '../IMG/qurolli-kuchlar.png'
+import rasm2 from '../IMG/tibbiyot.png'
+import rasm3 from '../IMG/korrupsiya.png'
+import rasm4 from '../IMG/jamoat.png'
+import rasm5 from '../IMG/himoya.png'
+import rasm6 from '../IMG/harbiy-meros-.png'
+import rasm7 from '../IMG/gosptal.png'
+import rasm8 from '../IMG/6-1-removebg-preview.png'
 
 export default function Main() {
   const [time,setTime]=useState(new Date())
@@ -250,7 +258,13 @@ function closeModal(){
              <i class='bx bx-menu' onClick={()=>navbarMenu()}></i>
           </div>
           <div className="menu-img">
-            <img src="https://mudofaa.uz/wp-content/uploads/2023/06/1-MO-EMB.png" alt="" />
+           {date.map((item)=>{
+            return(
+              <>
+              <img src={item.image} alt="" />
+              </>
+            )
+           })}
           </div>
           <div className="menu-search">
              <i class='bx bx-search' ></i>
@@ -592,28 +606,28 @@ function closeModal(){
           </div>
           <div className="main-info-ich">
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/qurolli-kuchlar.png" alt="" />
+              <img src={rasm1} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/tibbiyot.png" alt="" />
+              <img src={rasm2} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/gosptal.png" alt="" />
+             <img src={rasm2} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/harbiy-meros-.png" alt="" />
+            <img src={rasm3} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/korrupsiya.png" alt="" />
+            <img src={rasm4} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/jamoat.png" alt="" />
+            <img src={rasm5} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/maslahat.png" alt="" />
+            <img src={rasm6} alt="" />
             </div>
             <div className="frid-rasm">
-              <img src="https://mudofaa.uz/wp-content/uploads/2023/07/himoya.png" alt="" />
+            <img src={rasm7} alt="" />
             </div>
           </div>
         </div>

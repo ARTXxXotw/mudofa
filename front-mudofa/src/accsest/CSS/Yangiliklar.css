@@ -37,6 +37,7 @@
     .main-ikkinchi-tarab-yangilikar{
         position: relative;
         top: 100px !important;
+        margin-bottom: 150px !important;
     }
     .qiyshayib {
         width: auto !important;
@@ -101,6 +102,7 @@
 .main-ikkinchi-tarab-yangilikar{
     width: 90%;
     margin: auto;
+    margin-bottom: 60px;
 }
 #margin-button{
     margin-bottom: 120px;
