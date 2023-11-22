@@ -3,18 +3,55 @@ import axios from 'axios'
 import '../CSS/Allnews.css'
 
 export default function Allnews() {
-    const [data, dataKey] = useState([]);
-    const [date,setDate]=useState([]);
+    const [time,setTime]=useState(new Date())
+    const [state,setState]=useState(6)
+    const [state1,setState1]=useState(6)
+    const [key,setKey]=useState(0)
+    const [key1,setKey1]=useState(0)
+    const [data, dataKey] = useState([])
+    const [data11, dataKey11] = useState([])
+    const [date,setDate]=useState([])
+    const [boshqa,setBoshqa]=useState([])
     useEffect(()=>{
-        axios.get(`https://new-uzbek.onrender.com/api/v1/new_action`).then(res =>{
-          console.log(res.data);
-          dataKey(res.data)
-        })
-        axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res =>{
-          setDate(res.data);  
+      // setInterval(()=>setTime(new Date()),1000)
+      axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res =>{
         console.log(res.data);
-        })
-      },[])
+        dataKey(res.data)  
+        dataKey11(res.data)  
+       
+        axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res2 =>{
+        setDate(res2.data);  
+      console.log(res2.data);
+      })
+        console.log(res.data)
+      })
+    
+    },[])
+  
+  
+    const slice = data.slice(key, state);
+    console.log(slice, "<------- abzal");
+  
+    function PaginationRight(){
+      if (slice.length==6) {
+        setKey(key+6)
+      setState(state+6)
+      }
+    }
+    function PaginationLeft(){
+     if(key!==0){
+      setKey(key-6)
+      setState(state-6)
+     }
+    }
+
+    function NextPage(id){
+      setBoshqa(id)
+      localStorage.setItem("newsid",id)
+      window.location="/Yangiliklar"
+    }
+    
+    
     function navbarMenu(){
         //  var y= document.querySelector(".menu-nav-on").style.right;
         // if(y==" right: 100%;"){
@@ -97,10 +134,7 @@ export default function Allnews() {
         </div>
         <div className="menu-nav-on-text">
           <div className="menu-icon-home-onn">
-             <i class='bx bxs-home'></i>
-          </div>
-          <div className="navbar-modal-ich-menu-text">
-            <a href="#">Vazirlik haqida</a>
+             <i class='bx bxs-home' onClick={()=>window.location="/"}></i>
           </div>
           <div className="navbar-modal-ich-menu-text">
             <a href="#">Yangiliklar</a>
@@ -111,9 +145,9 @@ export default function Allnews() {
 
       <div className="pastarab-all-news-grid">
         <div className="grid-news-all">
-        {data.map((item,index)=>{
+        {slice.map((item,index)=>{
                 return(
-                  <div className="grid-card-1" >
+                  <div className="grid-card-1" onClick={()=>NextPage(item.id)} >
                   <div className="grid-card-img">
                     <img src={item.image} alt="No image" />
                   </div>
@@ -122,13 +156,14 @@ export default function Allnews() {
                       <span>YANGILIKLAR</span>
                     </div>
                     <div className="grid-card-text-info">
-                    <h2>{item.desc}</h2>
+                    <h2>{item.title}</h2>
                     <p>{item.time_create.slice(0,10)}</p>
                     </div>
                   </div>
                 </div>
                 )
               })}
+
         </div>
       </div>
       <footer className='footer'>

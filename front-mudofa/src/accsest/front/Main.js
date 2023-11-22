@@ -287,13 +287,10 @@ function closeModal(){
         </div>
         <div className="menu-nav-on-text">
           <div className="menu-icon-home-onn">
-             <i class='bx bxs-home'></i>
+             <i class='bx bxs-home' onClick={()=>window.location="/"}></i>
           </div>
           <div className="navbar-modal-ich-menu-text">
-            <a href="#">Vazirlik haqida</a>
-          </div>
-          <div className="navbar-modal-ich-menu-text">
-            <a href="#">Yangiliklar</a>
+            <a href="#" onClick={()=>window.location="/Allnews"}>Yangiliklar</a>
           </div>
         </div>
       </div>
@@ -463,7 +460,7 @@ function closeModal(){
                 <h2>Toshkent harbiy okrug</h2>
               </div>
               <div className="animation-butn">
-                <button>yangiliklar</button>
+                <button onClick={()=>window.location="/Allnews"}>yangiliklar</button>
               </div>
             </div>
             <div className="okruglar-block">
@@ -474,7 +471,7 @@ function closeModal(){
                 <h2>janubiy-garbiy maxsus harbiy okrug </h2>
               </div>
               <div className="animation-butn">
-                <button>yangiliklar</button>
+                <button onClick={()=>window.location="/Allnews"}>yangiliklar</button>
               </div>
             </div>
             <div className="okruglar-block">
@@ -485,7 +482,7 @@ function closeModal(){
                 <h2>MArkaziy jarbiy okrug</h2>
               </div>
               <div className="animation-butn">
-                <button>yangiliklar</button>
+                <button onClick={()=>window.location="/Allnews"}>yangiliklar</button>
               </div>
             </div>
             <div className="okruglar-block">
@@ -496,7 +493,7 @@ function closeModal(){
                 <h2>shimoliy-garbiy harbiy okrug</h2>
               </div>
               <div className="animation-butn">
-                <button>yangiliklar</button>
+                <button onClick={()=>window.location="/Allnews"}>yangiliklar</button>
               </div>
             </div>
           </div>
@@ -564,46 +561,16 @@ function closeModal(){
                   <img src="https://mudofaa.uz/wp-content/uploads/2023/10/psixologik-scaled.jpg" alt="" />
                 </div>
               </div>
-              <div className="grid-card-text-info-2">
-                  <h2>Muqaddasdir Vatan bayrogʻi</h2>
-                  <p>17.11.2023</p>
+              {slice.map((item)=>{
+                return(
+                  <>
+                    <div className="grid-card-text-info-2" onClick={()=>NextPage(item.id)} >
+                  <h2>{item.title}</h2>
+                  <p>{item.time_create.slice(0,10)}</p>
                   </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Qashqadaryoning olis garnizonidagi harbiy qismda keng qamrovli tibbiy koʻrik tashil etildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Elektr uskunalari va isitish moslamalaridan foydalanishda yong‘in xavfsizligi talablariga rioya qiling</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Joylarda “Maʼnaviyat marafoni” yuqori kayfiyatda oʻtkazildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Mudofaa vazirligi qo‘shinlarida “Yong‘in xavfsizligi oyligi” boshlandi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Jizzaxda “Eng ilg‘or divizion” ko‘rik tanlovi o‘tkazildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Qo‘mondon Toshkent viloyati yoshlari bilan onlayn muloqot qildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Ta’lim maskanida “Rahbar va yoshlar” uchrashuvi o‘tkazildi</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Harbiy xizmatchilar “Yashil makon” umummilliy loyihasida faol ishtirok etmoqda</h2>
-                  <p>17.11.2023</p>
-                  </div>
-                  <div className="grid-card-text-info-2">
-                  <h2>Harbiy xizmatchilar imkoniyati cheklangan bolalarni bayram bilan qutladi</h2>
-                  <p>17.11.2023</p>
-                  </div>
+                  </>
+                )
+              })}
             </div>
             <div className="pagination-btn">
             <button ><i class='bx bx-chevron-left' ></i></button>
