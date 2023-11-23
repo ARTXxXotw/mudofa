@@ -116,10 +116,16 @@ export default function Yangiliklar() {
              <i class='bx bx-menu' onClick={()=>navbarMenu()}></i>
           </div>
           <div className="menu-img">
-            <img src="https://mudofaa.uz/wp-content/uploads/2023/06/1-MO-EMB.png" alt="" />
+            {date.map((item)=>{
+              return(
+                <>
+                <img src={item.image} alt="" />
+                </>
+              )
+            })}
           </div>
-          <div className="menu-search">
-             <i class='bx bx-search' ></i>
+          <div className="menu-search" onClick={()=>window.location="/Allnews"}>
+             <i class='bx bxs-news'></i>
           </div>
           </div>
         </div>

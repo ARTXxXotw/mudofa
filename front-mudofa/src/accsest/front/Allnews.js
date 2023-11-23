@@ -123,8 +123,8 @@ export default function Allnews() {
               )
             })}
           </div>
-          <div className="menu-search">
-             <i class='bx bx-search' ></i>
+          <div className="menu-search" >
+            <i class='bx bxs-news'></i>
           </div>
           </div>
         </div>

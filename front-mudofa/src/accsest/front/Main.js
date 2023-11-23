@@ -266,8 +266,8 @@ function closeModal(){
             )
            })}
           </div>
-          <div className="menu-search">
-             <i class='bx bx-search' ></i>
+          <div className="menu-search" onClick={()=>window.location="/Allnews"}>
+          <i class='bx bxs-news'></i>
           </div>
           </div>
         </div>
