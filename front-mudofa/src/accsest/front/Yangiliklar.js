@@ -179,7 +179,7 @@ export default function Yangiliklar() {
                 </div>
                 <div className="prasmtor">
                     <div className="galz">
-                    <i class='bx bx-show'></i> <span>323</span>
+                    <i class='bx bx-show'></i> <span>1</span>
                     </div>
                     <div className="komment">
                     <i class='bx bxs-chat'></i> <span>0</span>

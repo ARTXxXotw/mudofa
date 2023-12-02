@@ -445,6 +445,7 @@ transition: 0.5s;
 
 .grid-card-img img{
 width: 400px;
+height: 250px;
 border-radius: 20px;
 cursor: pointer;
 transition: 1s ease; 
