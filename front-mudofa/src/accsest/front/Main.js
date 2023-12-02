@@ -75,7 +75,7 @@ export default function Main() {
 
 
   const slice = data.slice(key, state);
-  console.log(slice, "<------- abzal");
+  
 
   function PaginationRight(){
     if (slice.length==6) {
@@ -92,7 +92,6 @@ export default function Main() {
 
 
   const slice1 = data11.slice(key1, state1);
-  console.log(slice1, "<------- abzal2");
 
   function PaginationRight1(){
     if (slice1.length==6) {
@@ -106,6 +105,7 @@ export default function Main() {
     setState1(state1-6)
    }
   }
+
 
 
   const videoURLs = [
@@ -355,6 +355,7 @@ function closeModal(){
             )
           })}
             </div>
+            
             <div className="kvadrat-icon-2">
             {date.map((item)=>{
             return(

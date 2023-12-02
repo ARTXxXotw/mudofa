@@ -1407,3 +1407,11 @@ transform:translate(-10px);
     position: relative;
     left: 10px;
 }
+@media (max-width:633px) {
+    .rigth-animatin-2 {
+        top: 160px;
+    }
+    .rigth-animatin {
+        top: 160px;
+    }    
+}
