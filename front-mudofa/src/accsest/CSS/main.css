@@ -360,7 +360,7 @@ gap: 5px;
 }
 
 .main-info-yangiliklar{
-    width: 100%;
+    width: 65%;
     margin-bottom: 40px;
 }
 
@@ -1107,7 +1107,7 @@ cursor: pointer;
         cursor: pointer;
     }
     .main-info-yangiliklar {
-        width: 100%;
+        width: 60%;
         margin-bottom: 40px;
     }
     .main-info-kop-oqilganlar {
@@ -1445,4 +1445,8 @@ transform:translate(-10px);
   }
   #bukerakmas{
     display: none;
+  }
+  .main-info-yangiliklar-2{
+    width: 100%;
+    margin-bottom: 40px;
   }

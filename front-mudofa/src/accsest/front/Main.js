@@ -425,7 +425,7 @@ useEffect(() => {
           
         </div>
         <div className="main-block-2-ich">
-          <div className="main-info-yangiliklar">
+          <div className="main-info-yangiliklar-2">
             <div className="main-info-btn">
               <button>MULTIMEDIA</button>
             </div>
