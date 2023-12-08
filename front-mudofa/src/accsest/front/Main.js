@@ -1,16 +1,11 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../CSS/main.css'
 import logo1 from '../IMG/6-1-removebg-preview.png'
 import axios from 'axios'
 import { NavLink } from "react-router-dom";
-import rasm1 from '../IMG/qurolli-kuchlar.png'
-import rasm2 from '../IMG/tibbiyot.png'
-import rasm3 from '../IMG/korrupsiya.png'
-import rasm4 from '../IMG/jamoat.png'
-import rasm5 from '../IMG/himoya.png'
-import rasm6 from '../IMG/harbiy-meros-.png'
-import rasm7 from '../IMG/gosptal.png'
-import rasm8 from '../IMG/6-1-removebg-preview.png'
+import Test from './Test'
+
+
 
 export default function Main() {
   const [time,setTime]=useState(new Date())
@@ -61,8 +56,8 @@ export default function Main() {
     // setInterval(()=>setTime(new Date()),1000)
     axios.get(`https://new-uzbek.onrender.com/api/v1/new/`).then(res =>{
       console.log(res.data);
-      dataKey(res.data)  
-      dataKey11(res.data)  
+      dataKey(res.data);
+      dataKey11(res.data);
      
       axios.get(`https://new-uzbek.onrender.com/api/v1/company/`).then(res2 =>{
       setDate(res2.data);  
@@ -134,8 +129,7 @@ export default function Main() {
 
 
 
-  const videoId = "xCxWId-0Qtw";
-  let player;
+
 
 
 
@@ -157,50 +151,56 @@ function closeModal(){
 
 
 
+const videoId = "RKkaKwIbpA4";
+let player;
 
+useEffect(() => {
+  const loadYouTubeAPI = () => {
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+  };
 
-
-  useEffect(() => {
-    const loadYouTubeAPI = () => {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-    };
-
-    const onYouTubeIframeAPIReady = () => {
-      player = new window.YT.Player('player', {
-        width: '100%',
-        height: '100%',
-        videoId: videoId,
-        playerVars: {
-          autoplay: 2,
-          loop: 1,
-          controls: 0,
-          modestbranding: 1,
-          rel: 0,
-          showinfo: 0
-        },
-        events: {
-          'onReady': onPlayerReady
-        }
-      });
-    };
-
-    const onPlayerReady = (event) => {
-      event.target.mute();
-      event.target.playVideo();
-    };
-
-    loadYouTubeAPI();
-
-    return () => {
-      if (player) {
-        player.destroy();
+  const onYouTubeIframeAPIReady = () => {
+    player = new window.YT.Player('player', {
+      width: '100%',
+      height: '100%',
+      position: "absolute",
+      left:"0",
+      right:"0",
+      videoId: videoId,
+      playerVars: {
+        autoplay: 2,
+        loop: 1,
+        controls: 0,
+        modestbranding: 1,
+        rel: 0,
+        showinfo: 0,
+      },
+      events: {
+        'onReady': onPlayerReady
       }
-    };
-  }, [videoId]);
+    });
+  };
+
+  const onPlayerReady = (event) => {
+    event.target.mute();
+    event.target.playVideo();
+  };
+
+  loadYouTubeAPI();
+
+  return () => {
+    if (player) {
+      player.destroy();
+    }
+  };
+}, [videoId]);
+
+
+
 
   return (
     <div>
@@ -392,15 +392,7 @@ function closeModal(){
             )
           })}
             </div>
-            <div className="kvadrat-icon-6">
-            {date.map((item)=>{
-            return(
-              <>
-               <a href={item.twitter}> <i class='bx bxl-twitter' ></i></a>
-              </>
-            )
-          })}
-            </div>
+
           </div>
 
 
@@ -414,7 +406,7 @@ function closeModal(){
                   <img src="https://mudofaa.uz/wp-content/uploads/2023/10/psixologik-scaled.jpg" alt="" />
                 </div>
               </div>
-              {slice.map((item)=>{
+              {slice1.map((item)=>{
                 return(
                   <>
                     <div className="grid-card-text-info-2" onClick={()=>NextPage(item.id)} >
@@ -463,7 +455,7 @@ function closeModal(){
 
 
 
-          <div className="main-info-kop-oqilganlar">
+          <div className="main-info-kop-oqilganlar" id='bukerakmas'>
             <div className="main-info-btn-2">
               <button>OKRUGLAR</button>
             </div>
@@ -514,7 +506,7 @@ function closeModal(){
           </div>
           
         </div>
-        <div className="main-info-kop-oqilganlar-media">
+        <div className="main-info-kop-oqilganlar-media" id='bukerakemas-media'>
             <div className="main-info-btn-2">
               <button>OKRUGLAR</button>
             </div>
@@ -588,72 +580,24 @@ function closeModal(){
               })}
             </div>
             <div className="pagination-btn">
-            <button ><i class='bx bx-chevron-left' ></i></button>
-              <button ><i class='bx bx-chevron-right' ></i></button>
+            <button onClick={()=>PaginationLeft()} ><i class='bx bx-chevron-left' ></i></button>
+              <button onClick={()=>PaginationRight()} ><i class='bx bx-chevron-right' ></i></button>
             </div>
           </div>
       </div>
 
 
-      <div className="main-block-indo-rasmlar">
-        <div className="main-info-block-big">
-          <div className="ulani-ucshab-turadi">
-          <div className="line-animatin"></div>
-          <div className="line-animatin-2"></div>
-          </div>
-          <div className="ulani-ucshab-turadi" id='pasga'>
-            <div className="rigth-animatin"></div>
-            <div className="rigth-animatin-2"></div>
-          </div>
-          <div className="main-info-ich">
-            <div className="frid-rasm">
-              <img src={rasm1} alt="" />
-            </div>
-            <div className="frid-rasm">
-              <img src={rasm2} alt="" />
-            </div>
-            <div className="frid-rasm">
-             <img src={rasm2} alt="" />
-            </div>
-            <div className="frid-rasm">
-            <img src={rasm3} alt="" />
-            </div>
-            <div className="frid-rasm">
-            <img src={rasm4} alt="" />
-            </div>
-            <div className="frid-rasm">
-            <img src={rasm5} alt="" />
-            </div>
-            <div className="frid-rasm">
-            <img src={rasm6} alt="" />
-            </div>
-            <div className="frid-rasm">
-            <img src={rasm7} alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
+   
+
+
+
       <div className="map-iframe-google">
         <div className="ifrmae-google">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6172031.574941159!2d54.5855437398662!3d40.944520168533174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b20a5d676b1%3A0xca0a6dad7e841e20!2z0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1700277345797!5m2!1sru!2s"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-      <div className="map-pasida-btn">
-        <button>foydali havolalar</button>
-      </div>
-       <div className="main-info-cardrs">
-        <div className="card-nomer-1">
-          <div className="fon-a-card"></div>
-        </div>
-        <div className="card-nomer-2">
-          <div className="fon-a-card"></div>
-        </div>
-        <div className="card-nomer-3">
-          <div className="fon-a-card-1"></div>
-        </div>
-        <div className="card-nomer-4">
-          <div className="fon-a-card-2"></div>
-        </div>
+       <div className="main-swiper">
+      <Test />
        </div>
        <footer className='footer'>
         <div className="footer-fon">

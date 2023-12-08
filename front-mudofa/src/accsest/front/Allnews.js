@@ -27,6 +27,32 @@ export default function Allnews() {
       })
     
     },[])
+
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setCurrentTime(new Date());
+      }, 1000);
+  
+  
+      return () => {
+        clearInterval(timer);
+      };
+    }, []);
+  
+    const formatTime = (time) => {
+      return time < 10 ? `0${time}` : time;
+    };
+    const formattedTime = `${formatTime(currentTime.getHours())}:${formatTime(
+      currentTime.getMinutes()
+    )}:${formatTime(currentTime.getSeconds())}`;
+  
+    const formattedDate = `${formatTime(currentTime.getDate())}/${formatTime(
+      currentTime.getMonth() + 1
+    )}/${currentTime.getFullYear()}`;
+  
+  
   
   
     const slice = data.slice(key, state);
@@ -71,7 +97,7 @@ export default function Allnews() {
              <div className="main-block" id='margin-button'>
         <nav>
           <div className="navbar-text">
-            <p>Payshanba, Noyabr 16, 2023</p>
+            <p> {formattedTime }     <span> {time.toDateString()} </span> </p>
             <p className='nav-hover-link'>Maxsus imkoniyatlar</p>
             <div className="nav-icon">
             {date.map((item)=>{
@@ -161,7 +187,7 @@ export default function Allnews() {
                 return(
                   <div className="grid-card-1" onClick={()=>NextPage(item.id)} >
                   <div className="grid-card-img">
-                    <img src={item.image} alt="No image" />
+                    <img className='media-inportend' src={item.image} alt="No image" />
                   </div>
                   <div className="grid-card-text">
                     <div className="yangiliklar">

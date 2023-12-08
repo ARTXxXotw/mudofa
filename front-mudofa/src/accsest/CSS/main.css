@@ -13,8 +13,9 @@
 }
 
 .main-block nav{
+    
     height: 40px;
-    background-color: #003096;
+    background-color: #038180;
     color: #fff;
     display: flex;
     justify-content: end;
@@ -62,6 +63,7 @@ font-size: 15px;
 .nav-video{
     width: 100%;
     height: 400px;
+    overflow: hidden;
 }
 .nav-beck-fon{
     width: 100%;
@@ -358,7 +360,7 @@ gap: 5px;
 }
 
 .main-info-yangiliklar{
-    width: 65%;
+    width: 100%;
     margin-bottom: 40px;
 }
 
@@ -970,6 +972,9 @@ transition: 0.5s;
     padding: 15px;
     position: relative;
     right: 12px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 .img-paly-mark{
     width: 150px;
@@ -1102,7 +1107,7 @@ cursor: pointer;
         cursor: pointer;
     }
     .main-info-yangiliklar {
-        width: 60%;
+        width: 100%;
         margin-bottom: 40px;
     }
     .main-info-kop-oqilganlar {
@@ -1122,7 +1127,15 @@ cursor: pointer;
         font-size: 15px;
     } 
 }
+@media (max-width:1336px) {
+    .grid-card-img img {
+        height: 200px;
+    }
+}
 @media (max-width:902px) {
+    .grid-card-img img {
+        height: 350px;
+    }
     .line-animatin {
         width: 50%;
         height: 200px;
@@ -1167,7 +1180,9 @@ cursor: pointer;
     .main-info-kop-oqilganlar-media{
         width: 95%;
         margin: auto;
+        display: none;
     }
+
     .main-info-kop-oqilganlar {
         display: none;
     }
@@ -1196,6 +1211,11 @@ cursor: pointer;
         font-size: 14px;
         line-height: 25px;
         font-weight: 800 !important;
+    }
+}
+@media (max-width:524px) {
+    .grid-card-img img {
+        height: 250px;
     }
 }
 @media (max-width:501px) {
@@ -1370,22 +1390,9 @@ transform:translate(-10px);
     background: #81d742;
     cursor: pointer;
     transition: 0.4s;
-}
-.kvadrat-icon-6{
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 25px;
-    background: #00bde2;
     border-bottom-left-radius: 10px;
-    cursor: pointer;
-    transition: 0.4s;
-
 }
+
 .frid-rasm img:hover{
     filter: blur(1px);
     cursor: pointer;
@@ -1416,3 +1423,26 @@ transform:translate(-10px);
         top: 160px;
     }    
 }
+.main-swiper{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+  .mini-img{
+    width: 100%;
+    height: 330px;
+    background-color: red;
+    
+  }
+  .mini-img img{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100% !important;
+
+  }
+  .player-container{
+   scale: 2;
+  }
+  #bukerakmas{
+    display: none;
+  }

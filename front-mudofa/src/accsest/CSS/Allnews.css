@@ -14,7 +14,36 @@
     flex-wrap: wrap;
     gap: 50px;
 }
-
+@media (max-width:1437px) {
+    .media-inportend {
+    width: 400px;
+    height: 450px !important;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 1s ease;
+    box-shadow: 2px 3px 10px 10px rgba(172, 168, 168, 0.329);
+}
+}
+@media (max-width:873px) {
+    .media-inportend {
+        width: 400px;
+        height: 350px !important;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 1s ease;
+        box-shadow: 2px 3px 10px 10px rgba(172, 168, 168, 0.329);
+    }
+}
+@media (max-width:555px) {
+    .media-inportend {
+        width: 400px;
+        height: 250px !important;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 1s ease;
+        box-shadow: 2px 3px 10px 10px rgba(172, 168, 168, 0.329);
+    }
+}
 @media (max-width:1001px) {
     .pastarab-all-news-grid{
         position: relative;
